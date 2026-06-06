@@ -59,13 +59,13 @@ export const SearchPage: React.FC = () => {
       onScroll={handleScroll}
     >
       {/* Hero Search Section */}
-      <section className="bg-bg-page border-b border-border-line py-10 sm:py-14 px-4 transition-colors duration-300">
-        <div className="max-w-2xl mx-auto text-center mb-8">
-          <h1 className="font-serif text-3xl sm:text-4xl font-medium text-text-main mb-3 leading-tight">
+      <section className="bg-bg-page border-b border-border-line py-6 sm:py-12 px-4 transition-colors duration-300">
+        <div className="max-w-2xl mx-auto text-center mb-6">
+          <h1 className="font-serif text-2xl sm:text-4xl font-medium text-text-main mb-2 leading-tight">
             Tra cứu đáp án
           </h1>
-          <p className="text-text-muted text-base">
-            Tìm kiếm tức thì từ cơ sở dữ liệu câu hỏi — hoạt động hoàn toàn offline.
+          <p className="text-text-muted text-sm sm:text-base">
+            Tìm kiếm tức thì — hoạt động hoàn toàn offline.
           </p>
         </div>
 
@@ -131,7 +131,7 @@ export const SearchPage: React.FC = () => {
             <div
               key={q.id}
               className="animate-fade-in"
-              style={{ animationDelay: `${Math.min(idx * 30, 300)}ms` }}
+              style={{ animationDelay: `${Math.min(idx * 20, 150)}ms` }}
             >
               <QuestionCard
                 question={q}

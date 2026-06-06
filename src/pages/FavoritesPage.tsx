@@ -42,19 +42,19 @@ export const FavoritesPage: React.FC = () => {
   return (
     <div className="flex-1 overflow-y-auto">
       {/* Page Header */}
-      <section className="bg-bg-page border-b border-border-line py-10 px-4 transition-colors">
+      <section className="bg-bg-page border-b border-border-line py-6 sm:py-10 px-4 transition-colors">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center gap-3 mb-2">
             <div className="p-2 rounded-xl bg-brand/10">
-              <Heart size={22} className="text-brand" />
+              <Heart size={20} className="text-brand" />
             </div>
-            <h1 className="font-serif text-2xl sm:text-3xl font-medium text-text-main">
+            <h1 className="font-serif text-xl sm:text-3xl font-medium text-text-main">
               Câu hỏi yêu thích
             </h1>
           </div>
           <p className="text-text-muted text-sm ml-1">
             {favorites.length > 0
-              ? `${favorites.length} câu hỏi đã được đánh dấu — lưu offline trên thiết bị của bạn.`
+              ? `${favorites.length} câu hỏi đã đánh dấu — lưu offline trên thiết bị của bạn.`
               : 'Đánh dấu câu hỏi bằng biểu tượng ❤️ trên trang Tra cứu để lưu vào đây.'}
           </p>
         </div>
