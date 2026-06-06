@@ -1,0 +1,289 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #c96442;
+  --color-coral: #d97757;
+  --color-near-black: #141413;
+  --color-parchment: #f5f4ed;
+  --color-ivory: #faf9f5;
+  --color-warm-sand: #e8e6dc;
+  --color-dark-surface: #30302e;
+  --color-deep-dark: #141413;
+  --color-charcoal-warm: #4d4c48;
+  --color-olive-gray: #5e5d59;
+  --color-stone-gray: #87867f;
+  --color-warm-silver: #b0aea5;
+  --color-border-cream: #f0eee6;
+  --color-border-warm: #e8e6dc;
+  --color-border-dark: #30302e;
+  --color-ring-warm: #d1cfc5;
+
+  /* Custom micro font sizes for badges and labels */
+  --font-size-2xs: 0.65rem;
+  --font-size-3xs: 0.55rem;
+
+  /* Dynamic mapping for light/dark */
+  --color-bg-page: var(--bg-page);
+  --color-bg-card: var(--bg-card);
+  --color-bg-interactive: var(--bg-interactive);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-text-subtle: var(--text-subtle);
+  --color-border-line: var(--border-line);
+  --color-border-strong: var(--border-strong);
+  --color-ring-border: var(--ring-border);
+
+  --font-serif: "Georgia", "Playfair Display", serif;
+  --font-sans: "Inter", "system-ui", sans-serif;
+  --font-mono: "Courier New", monospace;
+}
+
+:root {
+  --bg-page: #f5f4ed;
+  /* Parchment */
+  --bg-card: #faf9f5;
+  /* Ivory */
+  --bg-interactive: #e8e6dc;
+  /* Warm Sand */
+  --text-main: #141413;
+  /* Near Black */
+  --text-muted: #5e5d59;
+  /* Olive Gray */
+  --text-subtle: #87867f;
+  /* Stone Gray */
+  --border-line: #f0eee6;
+  /* Border Cream */
+  --border-strong: #e8e6dc;
+  /* Border Warm */
+  --ring-border: #d1cfc5;
+  /* Ring Warm */
+}
+
+.dark {
+  --bg-page: #141413;
+  /* Deep Dark / Near Black */
+  --bg-card: #30302e;
+  /* Dark Surface */
+  --bg-interactive: #3d3d3a;
+  /* Dark Warm */
+  --text-main: #faf9f5;
+  /* Ivory / Light Warm */
+  --text-muted: #b0aea5;
+  /* Warm Silver */
+  --text-subtle: #87867f;
+  /* Stone Gray */
+  --border-line: #30302e;
+  /* Border Dark */
+  --border-strong: #3d3d3a;
+  /* Dark Warm Border */
+  --ring-border: #4d4c48;
+  /* Ring Dark */
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom animation for fading in results */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom scrollbars matching Claude aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ring-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-subtle);
+}
+
+/* ============================================================
+   Driver.js Custom Styling — Claude editorial aesthetic
+   ============================================================ */
+
+/* Base popover container */
+.driver-popover.claude-popover {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-strong) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0,0,0,0.08) !important;
+  font-family: var(--font-sans) !important;
+  padding: 24px !important;
+  /* Fixed width so it doesn't shrink on mobile */
+  min-width: 300px !important;
+  max-width: min(360px, calc(100vw - 32px)) !important;
+  width: min(360px, calc(100vw - 32px)) !important;
+  box-sizing: border-box !important;
+}
+
+/* Title */
+.driver-popover.claude-popover .driver-popover-title {
+  font-family: var(--font-serif) !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: var(--text-main) !important;
+  margin-bottom: 10px !important;
+  line-height: 1.3 !important;
+}
+
+/* Description */
+.driver-popover.claude-popover .driver-popover-description {
+  font-size: 14px !important;
+  color: var(--text-muted) !important;
+  line-height: 1.65 !important;
+  margin-bottom: 4px !important;
+}
+
+/* Footer — flex row, space-between, no wrapping */
+.driver-popover.claude-popover .driver-popover-footer {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-top: 20px !important;
+  gap: 10px !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Progress text */
+.driver-popover.claude-popover .driver-popover-progress-text {
+  font-size: 12px !important;
+  color: var(--text-subtle) !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  order: 0 !important;
+}
+
+/* Button group wrapper */
+.driver-popover.claude-popover .driver-popover-footer .driver-popover-navigation-btns {
+  display: flex !important;
+  gap: 8px !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+}
+
+/* All footer buttons */
+.driver-popover.claude-popover .driver-popover-footer button {
+  background-color: var(--bg-interactive) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--ring-border) !important;
+  text-shadow: none !important;
+  border-radius: 10px !important;
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+  min-width: 80px !important;
+  text-align: center !important;
+}
+
+.driver-popover.claude-popover .driver-popover-footer button:hover {
+  background-color: var(--border-strong) !important;
+}
+
+/* "Tiếp theo" / Done button — brand color */
+.driver-popover.claude-popover .driver-popover-footer .driver-popover-next-btn {
+  background-color: #c96442 !important;
+  color: #faf9f5 !important;
+  border-color: #c96442 !important;
+}
+
+.driver-popover.claude-popover .driver-popover-footer .driver-popover-next-btn:hover {
+  background-color: #d97757 !important;
+  border-color: #d97757 !important;
+}
+
+/* Close (×) button */
+.driver-popover.claude-popover .driver-popover-close-btn {
+  color: var(--text-subtle) !important;
+  background: transparent !important;
+  border: none !important;
+  font-size: 20px !important;
+  padding: 2px 6px !important;
+  min-width: unset !important;
+}
+
+.driver-popover.claude-popover .driver-popover-close-btn:hover {
+  color: var(--text-main) !important;
+  background: var(--bg-interactive) !important;
+  border-radius: 6px !important;
+}
+
+/* Arrow (the little triangle pointer) */
+.driver-popover.claude-popover .driver-popover-arrow-side-left.driver-popover-arrow {
+  border-right-color: var(--border-strong) !important;
+}
+.driver-popover.claude-popover .driver-popover-arrow-side-right.driver-popover-arrow {
+  border-left-color: var(--border-strong) !important;
+}
+.driver-popover.claude-popover .driver-popover-arrow-side-top.driver-popover-arrow {
+  border-bottom-color: var(--border-strong) !important;
+}
+.driver-popover.claude-popover .driver-popover-arrow-side-bottom.driver-popover-arrow {
+  border-top-color: var(--border-strong) !important;
+}
+
+/* ── Mobile overrides (≤ 480px) ── */
+@media (max-width: 480px) {
+  .driver-popover.claude-popover {
+    padding: 20px 18px !important;
+    min-width: 280px !important;
+    max-width: calc(100vw - 24px) !important;
+    width: calc(100vw - 24px) !important;
+    border-radius: 14px !important;
+    /* Force center on very small screens */
+    left: 12px !important;
+    right: 12px !important;
+    transform: none !important;
+  }
+
+  .driver-popover.claude-popover .driver-popover-title {
+    font-size: 16px !important;
+  }
+
+  .driver-popover.claude-popover .driver-popover-description {
+    font-size: 13px !important;
+  }
+
+  .driver-popover.claude-popover .driver-popover-footer {
+    margin-top: 16px !important;
+    gap: 8px !important;
+  }
+
+  .driver-popover.claude-popover .driver-popover-footer button {
+    padding: 8px 14px !important;
+    font-size: 13px !important;
+    min-width: 72px !important;
+  }
+}
