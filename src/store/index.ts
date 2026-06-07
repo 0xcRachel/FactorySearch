@@ -47,6 +47,7 @@ export const useSettingsStore = create<SettingsState>()(
 
 // Store 2: Search and Navigation Store
 interface SearchFilters {
+  school?: string;
   subject?: string;
   chapter?: string;
   tag?: string;

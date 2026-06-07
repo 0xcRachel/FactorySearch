@@ -60,12 +60,9 @@ export class IndexedDBDriver implements DatabaseDriver {
           let isMatch = true;
 
           // Apply filters
-          if (filters.subject && question.subject !== filters.subject) {
-            isMatch = false;
-          }
-          if (filters.chapter && question.chapter !== filters.chapter) {
-            isMatch = false;
-          }
+          if (filters.school && question.school !== filters.school) isMatch = false;
+          if (filters.subject && question.subject !== filters.subject) isMatch = false;
+          if (filters.chapter && question.chapter !== filters.chapter) isMatch = false;
           if (filters.tag) {
             const tagsList = question.tags ? question.tags.split(',').map(t => t.trim()) : [];
             if (!tagsList.includes(filters.tag)) {
@@ -139,7 +136,24 @@ export class IndexedDBDriver implements DatabaseDriver {
     return favoritesService.isFavorite(id);
   }
 
-  async getSubjects(): Promise<string[]> {
+  async getSchools(): Promise<string[]> {
+    await this.init();
+    const store = this.getStore('readonly');
+    return new Promise((resolve, reject) => {
+      const schools = new Set<string>();
+      const request = store.openCursor();
+      request.onsuccess = () => {
+        const cursor = request.result;
+        if (cursor) {
+          if (cursor.value.school) schools.add(cursor.value.school);
+          cursor.continue();
+        } else { resolve(Array.from(schools).sort()); }
+      };
+      request.onerror = () => reject(new Error('Failed to retrieve schools'));
+    });
+  }
+
+  async getSubjects(school?: string): Promise<string[]> {
     await this.init();
     const store = this.getStore('readonly');
     return new Promise((resolve, reject) => {
@@ -148,17 +162,15 @@ export class IndexedDBDriver implements DatabaseDriver {
       request.onsuccess = () => {
         const cursor = request.result;
         if (cursor) {
-          subjects.add(cursor.value.subject);
+          if (!school || cursor.value.school === school) subjects.add(cursor.value.subject);
           cursor.continue();
-        } else {
-          resolve(Array.from(subjects).sort());
-        }
+        } else { resolve(Array.from(subjects).sort()); }
       };
       request.onerror = () => reject(new Error('Failed to retrieve subjects'));
     });
   }
 
-  async getChapters(subject?: string): Promise<string[]> {
+  async getChapters(subject?: string, school?: string): Promise<string[]> {
     await this.init();
     const store = this.getStore('readonly');
     return new Promise((resolve, reject) => {
@@ -168,13 +180,11 @@ export class IndexedDBDriver implements DatabaseDriver {
         const cursor = request.result;
         if (cursor) {
           const q = cursor.value;
-          if (!subject || q.subject === subject) {
+          if ((!school || q.school === school) && (!subject || q.subject === subject)) {
             chapters.add(q.chapter);
           }
           cursor.continue();
-        } else {
-          resolve(Array.from(chapters).sort());
-        }
+        } else { resolve(Array.from(chapters).sort()); }
       };
       request.onerror = () => reject(new Error('Failed to retrieve chapters'));
     });
@@ -218,6 +228,7 @@ export class IndexedDBDriver implements DatabaseDriver {
 
       for (const q of questions) {
         store.put({
+          school: q.school || null,
           subject: q.subject,
           chapter: q.chapter,
           question: q.question,

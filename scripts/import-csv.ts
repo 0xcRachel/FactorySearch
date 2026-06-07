@@ -1,6 +1,7 @@
 import fs from 'fs';
 
 export interface RawQuestion {
+  school?: string;
   subject: string;
   chapter: string;
   question: string;
@@ -79,6 +80,7 @@ export function parseCSV(filePath: string): RawQuestion[] {
 
     if (item.question && item.answer) {
       results.push({
+        school: item.school || '',
         subject: item.subject || 'Tổng hợp',
         chapter: item.chapter || 'Chương chung',
         question: item.question,

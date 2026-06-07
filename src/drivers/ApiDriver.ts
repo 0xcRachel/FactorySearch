@@ -49,14 +49,19 @@ export class ApiDriver implements DatabaseDriver {
     return favoritesService.isFavorite(id);
   }
 
-  async getSubjects(): Promise<string[]> {
+  async getSchools(): Promise<string[]> {
     await this.delay(80);
-    return this.mockDelegate.getSubjects();
+    return this.mockDelegate.getSchools();
   }
 
-  async getChapters(subject?: string): Promise<string[]> {
+  async getSubjects(school?: string): Promise<string[]> {
     await this.delay(80);
-    return this.mockDelegate.getChapters(subject);
+    return this.mockDelegate.getSubjects(school);
+  }
+
+  async getChapters(subject?: string, school?: string): Promise<string[]> {
+    await this.delay(80);
+    return this.mockDelegate.getChapters(subject, school);
   }
 
   async getTags(): Promise<string[]> {

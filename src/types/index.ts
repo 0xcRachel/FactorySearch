@@ -1,19 +1,21 @@
 export interface Question {
   id: number;
+  school?: string;       // Trường / tổ chức (optional, can be stored in subject prefix)
   subject: string;
   chapter: string;
   question: string;
-  question_clean?: string; // Unaccented text for FTS search
+  question_clean?: string;
   answer: string;
   explanation: string | null;
-  tags: string | null; // Comma-separated tags
+  tags: string | null;
   created_at?: string;
 }
 
 export interface SearchFilters {
-  subject?: string;
-  chapter?: string;
-  tag?: string;
+  school?: string;   // Trường / tổ chức
+  subject?: string;  // Môn học
+  chapter?: string;  // Chương
+  tag?: string;      // Tag
 }
 
 export interface SearchResult {

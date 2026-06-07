@@ -6,6 +6,7 @@ import { removeVietnameseAccents } from '../utils/text';
 const MOCK_QUESTIONS: Question[] = [
   {
     id: 1,
+    school: 'Đại học Bách Khoa',
     subject: 'Toán Giải Tích',
     chapter: 'Chương 1: Đạo hàm và tích phân',
     question: 'Tính đạo hàm của hàm số y = ln(x^2 + 1).',
@@ -16,6 +17,7 @@ const MOCK_QUESTIONS: Question[] = [
   },
   {
     id: 2,
+    school: 'Đại học Bách Khoa',
     subject: 'Toán Giải Tích',
     chapter: 'Chương 1: Đạo hàm và tích phân',
     question: 'Tính tích phân cận từ 0 đến 1 của hàm số f(x) = x^2.',
@@ -26,6 +28,7 @@ const MOCK_QUESTIONS: Question[] = [
   },
   {
     id: 3,
+    school: 'Đại học Bách Khoa',
     subject: 'Cấu trúc dữ liệu và giải thuật',
     chapter: 'Chương 2: Danh sách và cây nhị phân',
     question: 'Độ phức tạp thời gian trung bình của thuật toán sắp xếp nhanh (Quick Sort) là gì?',
@@ -36,6 +39,7 @@ const MOCK_QUESTIONS: Question[] = [
   },
   {
     id: 4,
+    school: 'Đại học Kinh Tế',
     subject: 'Cấu trúc dữ liệu và giải thuật',
     chapter: 'Chương 2: Danh sách và cây nhị phân',
     question: 'Trong cây nhị phân tìm kiếm (BST), duyệt theo thứ tự nào sẽ cho ra danh sách khóa tăng dần?',
@@ -46,6 +50,7 @@ const MOCK_QUESTIONS: Question[] = [
   },
   {
     id: 5,
+    school: 'Đại học Kinh Tế',
     subject: 'Vật lý đại cương',
     chapter: 'Chương 1: Cơ học chất điểm',
     question: 'Phát biểu định luật II Newton dưới dạng phương trình.',
@@ -56,6 +61,7 @@ const MOCK_QUESTIONS: Question[] = [
   },
   {
     id: 6,
+    school: 'Đại học Kinh Tế',
     subject: 'Vật lý đại cương',
     chapter: 'Chương 2: Nhiệt động lực học',
     question: 'Phát biểu nguyên lý thứ nhất của nhiệt động lực học.',
@@ -69,79 +75,61 @@ const MOCK_QUESTIONS: Question[] = [
 export class MockDriver implements DatabaseDriver {
   readonly name = 'Mock Data (Offline Test)';
 
-  async init(): Promise<void> {
-    // No-op
-  }
+  async init(): Promise<void> {}
 
   async searchQuestions(query: string, filters: SearchFilters, page: number, pageSize: number): Promise<SearchResult> {
     const cleanQuery = removeVietnameseAccents(query).trim();
     const queryWords = cleanQuery.split(/\s+/).filter(w => w.length > 0);
 
     const filtered = MOCK_QUESTIONS.filter(q => {
-      // Filter by subject
+      if (filters.school && q.school !== filters.school) return false;
       if (filters.subject && q.subject !== filters.subject) return false;
-      // Filter by chapter
       if (filters.chapter && q.chapter !== filters.chapter) return false;
-      // Filter by tag
       if (filters.tag) {
         const qTags = q.tags ? q.tags.split(',').map(t => t.trim()) : [];
         if (!qTags.includes(filters.tag)) return false;
       }
-
-      // Keyword match
       if (queryWords.length > 0) {
         const targetText = removeVietnameseAccents(`${q.question} ${q.subject} ${q.chapter} ${q.tags || ''}`);
         return queryWords.every(word => targetText.includes(word));
       }
-
       return true;
     });
 
     const offset = (page - 1) * pageSize;
     const questions = filtered.slice(offset, offset + pageSize);
-
-    return {
-      questions,
-      total: filtered.length,
-      timeMs: 1.5
-    };
+    return { questions, total: filtered.length, timeMs: 1.5 };
   }
 
   async getQuestionById(id: number): Promise<Question | null> {
     return MOCK_QUESTIONS.find(q => q.id === id) || null;
   }
 
-  getFavorites(): Promise<Question[]> {
-    return favoritesService.getFavorites();
+  getFavorites() { return favoritesService.getFavorites(); }
+  addFavorite(question: Question) { return favoritesService.addFavorite(question); }
+  removeFavorite(id: number) { return favoritesService.removeFavorite(id); }
+  isFavorite(id: number) { return favoritesService.isFavorite(id); }
+
+  async getSchools(): Promise<string[]> {
+    return Array.from(new Set(MOCK_QUESTIONS.map(q => q.school).filter((s): s is string => !!s))).sort();
   }
 
-  addFavorite(question: Question): Promise<void> {
-    return favoritesService.addFavorite(question);
+  async getSubjects(school?: string): Promise<string[]> {
+    const list = school ? MOCK_QUESTIONS.filter(q => q.school === school) : MOCK_QUESTIONS;
+    return Array.from(new Set(list.map(q => q.subject))).sort();
   }
 
-  removeFavorite(id: number): Promise<void> {
-    return favoritesService.removeFavorite(id);
-  }
-
-  isFavorite(id: number): Promise<boolean> {
-    return favoritesService.isFavorite(id);
-  }
-
-  async getSubjects(): Promise<string[]> {
-    return Array.from(new Set(MOCK_QUESTIONS.map(q => q.subject))).sort();
-  }
-
-  async getChapters(subject?: string): Promise<string[]> {
-    const filtered = subject ? MOCK_QUESTIONS.filter(q => q.subject === subject) : MOCK_QUESTIONS;
-    return Array.from(new Set(filtered.map(q => q.chapter))).sort();
+  async getChapters(subject?: string, school?: string): Promise<string[]> {
+    let list = MOCK_QUESTIONS;
+    if (school) list = list.filter(q => q.school === school);
+    if (subject) list = list.filter(q => q.subject === subject);
+    return Array.from(new Set(list.map(q => q.chapter))).sort();
   }
 
   async getTags(): Promise<string[]> {
     const tagsSet = new Set<string>();
     MOCK_QUESTIONS.forEach(q => {
-      if (q.tags) {
-        q.tags.split(',').forEach(t => tagsSet.add(t.trim()));
-      }
+      if (q.tags) q.tags.split(',').forEach(t => tagsSet.add(t.trim()));
     });
     return Array.from(tagsSet).sort();
   }

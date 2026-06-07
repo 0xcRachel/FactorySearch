@@ -19,8 +19,15 @@ export class SQLiteDriver implements DatabaseDriver {
     }
   }
 
+  public onProgress?: (percent: number, message: string) => void;
+
   private handleWorkerMessage(e: MessageEvent) {
-    const { id, success, payload, error } = e.data;
+    const { id, success, payload, error, type } = e.data;
+    if (type === 'progress') {
+      if (this.onProgress) this.onProgress(payload.percent, payload.message);
+      return;
+    }
+
     const request = this.pendingRequests.get(id);
     if (request) {
       this.pendingRequests.delete(id);
@@ -93,14 +100,22 @@ export class SQLiteDriver implements DatabaseDriver {
     return favoritesService.isFavorite(id);
   }
 
-  async getSubjects(): Promise<string[]> {
+  async getSchools(): Promise<string[]> {
     await this.init();
+    return this.sendToWorker<string[]>('getSchools', {});
+  }
+
+  async getSubjects(school?: string): Promise<string[]> {
+    await this.init();
+    if (school) {
+      return this.sendToWorker<string[]>('getSubjects', { school });
+    }
     return this.subjectsCache;
   }
 
-  async getChapters(subject?: string): Promise<string[]> {
+  async getChapters(subject?: string, school?: string): Promise<string[]> {
     await this.init();
-    return this.sendToWorker<string[]>('getChapters', { subject });
+    return this.sendToWorker<string[]>('getChapters', { subject, school });
   }
 
   async getTags(): Promise<string[]> {

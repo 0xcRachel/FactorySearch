@@ -33,6 +33,7 @@ export const SettingsPage: React.FC = () => {
   const [isImporting, setIsImporting] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
   const [isClearing, setIsClearing] = useState(false);
+  const [progress, setProgress] = useState<{ percent: number; message: string } | null>(null);
 
   /* ---- IMPORT ---- */
   const handleImportDb = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,9 +41,11 @@ export const SettingsPage: React.FC = () => {
     if (!file) return;
 
     setIsImporting(true);
+    setProgress({ percent: 0, message: 'Đang bắt đầu import...' });
     try {
       const buffer = await file.arrayBuffer();
       const driver = DriverFactory.getDriver(activeDriver);
+      driver.onProgress = (percent, message) => setProgress({ percent, message });
 
       if (file.name.endsWith('.json')) {
         const text = await file.text();
@@ -63,6 +66,7 @@ export const SettingsPage: React.FC = () => {
       addToast(`Lỗi nhập: ${err.message}`, 'error');
     } finally {
       setIsImporting(false);
+      setProgress(null);
       if (fileInputRef.current) fileInputRef.current.value = '';
     }
   };
@@ -92,17 +96,20 @@ export const SettingsPage: React.FC = () => {
 
   /* ---- CLEAR DB ---- */
   const handleClearDb = async () => {
-    if (!window.confirm('Bạn chắc chắn muốn xóa toàn bộ dữ liệu câu hỏi? Hành động này không thể hoàn tác.')) return;
+    if (!window.confirm('Bạn chắc chắn muốn khôi phục dữ liệu gốc? Hành động này sẽ xóa toàn bộ thay đổi và nạp lại từ đầu.')) return;
     setIsClearing(true);
+    setProgress({ percent: 0, message: 'Chuẩn bị khởi tạo...' });
     try {
       const driver = DriverFactory.getDriver(activeDriver);
+      driver.onProgress = (percent, message) => setProgress({ percent, message });
       await driver.clearDatabase?.();
       setDbInfo(null, null, null);
-      addToast('Đã xóa toàn bộ database.', 'warning');
+      addToast('Đã khôi phục dữ liệu hệ thống!', 'success');
     } catch (err: any) {
-      addToast(`Lỗi xóa: ${err.message}`, 'error');
+      addToast(`Lỗi khôi phục: ${err.message}`, 'error');
     } finally {
       setIsClearing(false);
+      setProgress(null);
     }
   };
 
@@ -297,6 +304,34 @@ export const SettingsPage: React.FC = () => {
           </p>
         </div>
       </div>
+
+      {/* Progress Modal Overlay */}
+      {progress && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <div className="bg-bg-card border border-border-strong rounded-2xl p-6 w-full max-w-sm shadow-2xl flex flex-col items-center text-center animate-in fade-in zoom-in-95 duration-200">
+            <div className="w-12 h-12 mb-4 relative">
+              <svg className="animate-spin w-full h-full text-brand" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold text-text-main mb-1">Hệ thống đang xử lý</h3>
+            <p className="text-sm text-text-muted mb-5 min-h-[40px] flex items-center justify-center">
+              {progress.message}
+            </p>
+            
+            <div className="w-full bg-bg-interactive rounded-full h-2.5 overflow-hidden">
+              <div 
+                className="bg-brand h-2.5 rounded-full transition-all duration-300 ease-out" 
+                style={{ width: `${progress.percent}%` }}
+              ></div>
+            </div>
+            <div className="mt-2 text-xs font-bold text-brand">
+              {progress.percent}%
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
