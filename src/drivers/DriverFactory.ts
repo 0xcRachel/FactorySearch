@@ -3,8 +3,9 @@ import { SQLiteDriver } from './SQLiteDriver';
 import { IndexedDBDriver } from './IndexedDBDriver';
 import { MockDriver } from './MockDriver';
 import { ApiDriver } from './ApiDriver';
+import { JsonDriver } from './JsonDriver';
 
-export type DriverType = 'sqlite' | 'indexeddb' | 'api' | 'mock';
+export type DriverType = 'json' | 'sqlite' | 'indexeddb' | 'api' | 'mock';
 
 export class DriverFactory {
   private static instances: Partial<Record<DriverType, DatabaseDriver>> = {};
@@ -15,6 +16,9 @@ export class DriverFactory {
   static getDriver(type: DriverType): DatabaseDriver {
     if (!this.instances[type]) {
       switch (type) {
+        case 'json':
+          this.instances[type] = new JsonDriver();
+          break;
         case 'sqlite':
           this.instances[type] = new SQLiteDriver();
           break;
@@ -35,3 +39,4 @@ export class DriverFactory {
   }
 }
 export default DriverFactory;
+

@@ -21,7 +21,7 @@ export const useSettingsStore = create<SettingsState>()(
   persist(
     (set) => ({
       theme: 'light',
-      activeDriver: 'sqlite',
+      activeDriver: 'json',
       hasSeenOnboarding: false,
       dbSize: null,
       dbFileName: null,

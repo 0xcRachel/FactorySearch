@@ -11,6 +11,7 @@ import { useToast } from '../components/common/Toast';
 import { useOnboarding } from '../components/onboarding/useOnboarding';
 
 const DRIVER_OPTIONS: { value: DriverType; label: string; description: string }[] = [
+  { value: 'json', label: 'JSON (Bộ nhớ cục bộ)', description: 'Hoạt động offline 100%, siêu nhẹ, tối ưu mọi thiết bị' },
   { value: 'sqlite', label: 'SQLite (WebAssembly)', description: 'Tốc độ cao, FTS5, hoàn toàn offline' },
   { value: 'indexeddb', label: 'IndexedDB', description: 'Fallback thuần trình duyệt' },
   { value: 'mock', label: 'Mock Data', description: 'Dữ liệu mẫu tĩnh cho kiểm thử' },
@@ -83,7 +84,8 @@ export const SettingsPage: React.FC = () => {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `factorysearch-backup-${new Date().toISOString().slice(0, 10)}.db`;
+      const extension = activeDriver === 'json' ? 'json' : 'db';
+      a.download = `factorysearch-backup-${new Date().toISOString().slice(0, 10)}.${extension}`;
       a.click();
       URL.revokeObjectURL(url);
       addToast('Đã xuất database thành công!', 'success');
@@ -241,11 +243,11 @@ export const SettingsPage: React.FC = () => {
 
               <button
                 onClick={handleExportDb}
-                disabled={isExporting || activeDriver !== 'sqlite'}
+                disabled={isExporting || (activeDriver !== 'sqlite' && activeDriver !== 'json')}
                 className="flex items-center justify-center gap-2 px-4 py-2.5 bg-bg-interactive border border-border-strong text-text-main text-sm font-semibold rounded-xl hover:bg-border-strong transition-colors disabled:opacity-50"
               >
                 <Download size={16} className={isExporting ? 'animate-bounce' : ''} />
-                {isExporting ? 'Đang xuất...' : 'Backup (.db)'}
+                {isExporting ? 'Đang xuất...' : 'Tải xuống / Backup'}
               </button>
             </div>
 
