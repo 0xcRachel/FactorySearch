@@ -1,15 +1,14 @@
 // FactorySearch Service Worker
 // Implements Stale-While-Revalidate for app shell, Cache-First for assets
 
-const CACHE_NAME = 'factorysearch-v2';
-const STATIC_CACHE = 'factorysearch-static-v2';
+const CACHE_NAME = 'factorysearch-v3';
+const STATIC_CACHE = 'factorysearch-static-v3';
 
-// App shell resources to pre-cache
+// App shell resources to pre-cache (exclude WASM/DB - iOS Safari can't handle cached WASM)
 const APP_SHELL = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/sql-wasm.wasm',
 ];
 
 // Install: pre-cache app shell
@@ -68,9 +67,16 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Cache-First strategy for static assets (JS, CSS, WASM, images)
+  // Never cache WASM or DB files - iOS Safari breaks when serving cached binary files
+  const isNoCacheAsset = url.pathname.match(/\.(wasm|db)$/);
+  if (isNoCacheAsset) {
+    // Always pass through to network
+    return;
+  }
+
+  // Cache-First strategy for static assets (JS, CSS, images)
   const isStaticAsset =
-    url.pathname.match(/\.(js|css|wasm|png|svg|ico|webp|woff2?)$/) ||
+    url.pathname.match(/\.(js|css|png|svg|ico|webp|woff2?)$/) ||
     url.pathname.startsWith('/assets/');
 
   if (isStaticAsset) {

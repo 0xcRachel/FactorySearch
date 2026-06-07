@@ -26,9 +26,9 @@ async function initDatabase(): Promise<{ size: number; source: 'indexeddb' | 'ne
     return { size: cachedDbArray ? cachedDbArray.byteLength : 0, source: 'indexeddb' };
   }
 
-  // Load sql.js WASM
+  // Load sql.js WASM — use absolute URL so iOS PWA resolves it correctly
   SQL = await initSqlJs({
-    locateFile: (file) => `/${file}`
+    locateFile: (file) => `${self.location.origin}/${file}`
   });
 
   // Attempt to load database from IndexedDB cache
@@ -170,6 +170,21 @@ async function seedDatabase() {
   if (!db) return;
 
   const seeds: any[] = [];
+
+  // 10 câu TEST để xác nhận SQLite hoạt động
+  const testQuestions = [
+    { school: 'TEST', subject: 'Kiểm tra SQLite', chapter: 'Test 1', question: 'SQLite có hoạt động không?\nA. Có\nB. Không\nC. Không biết\nD. Không quan tâm', answer: 'A. Có', explanation: 'Nếu bạn thấy câu này, SQLite đang hoạt động!', tags: 'test,sqlite' },
+    { school: 'TEST', subject: 'Kiểm tra SQLite', chapter: 'Test 1', question: '1 + 1 = ?\nA. 1\nB. 2\nC. 3\nD. 4', answer: 'B. 2', explanation: 'Phép cộng cơ bản.', tags: 'test,math' },
+    { school: 'TEST', subject: 'Kiểm tra SQLite', chapter: 'Test 1', question: 'Màu sắc của bầu trời là gì?\nA. Đỏ\nB. Vàng\nC. Xanh\nD. Tím', answer: 'C. Xanh', explanation: 'Bầu trời có màu xanh do tán xạ ánh sáng.', tags: 'test,general' },
+    { school: 'TEST', subject: 'Kiểm tra SQLite', chapter: 'Test 1', question: 'Nước sôi ở bao nhiêu độ?\nA. 50°C\nB. 75°C\nC. 100°C\nD. 120°C', answer: 'C. 100°C', explanation: 'Nước sôi ở 100°C ở áp suất khí quyển chuẩn.', tags: 'test,science' },
+    { school: 'TEST', subject: 'Kiểm tra SQLite', chapter: 'Test 2', question: 'Thủ đô của Việt Nam là gì?\nA. TP.HCM\nB. Đà Nẵng\nC. Hải Phòng\nD. Hà Nội', answer: 'D. Hà Nội', explanation: 'Hà Nội là thủ đô của Việt Nam.', tags: 'test,geography' },
+    { school: 'TEST', subject: 'Kiểm tra SQLite', chapter: 'Test 2', question: 'Ngôn ngữ lập trình nào được dùng để xây dựng web?\nA. Python\nB. JavaScript\nC. C++\nD. Java', answer: 'B. JavaScript', explanation: 'JavaScript là ngôn ngữ phổ biến nhất cho web frontend.', tags: 'test,programming' },
+    { school: 'TEST', subject: 'Kiểm tra SQLite', chapter: 'Test 2', question: 'HTTP viết tắt của gì?\nA. HyperText Transfer Protocol\nB. High Transfer Text Protocol\nC. Home Transfer Text Process\nD. HyperText Text Protocol', answer: 'A. HyperText Transfer Protocol', explanation: 'HTTP = HyperText Transfer Protocol.', tags: 'test,web' },
+    { school: 'TEST', subject: 'Kiểm tra SQLite', chapter: 'Test 2', question: 'RAM là viết tắt của?\nA. Read Access Memory\nB. Random Access Memory\nC. Read All Memory\nD. Random All Memory', answer: 'B. Random Access Memory', explanation: 'RAM = Random Access Memory.', tags: 'test,computer' },
+    { school: 'TEST', subject: 'Kiểm tra SQLite', chapter: 'Test 3', question: 'CPU là gì?\nA. Central Processing Unit\nB. Computer Power Unit\nC. Central Power Unit\nD. Computer Processing Unit', answer: 'A. Central Processing Unit', explanation: 'CPU = Central Processing Unit (Bộ xử lý trung tâm).', tags: 'test,computer' },
+    { school: 'TEST', subject: 'Kiểm tra SQLite', chapter: 'Test 3', question: 'SQLite là loại cơ sở dữ liệu gì?\nA. Cơ sở dữ liệu đám mây\nB. Cơ sở dữ liệu nhúng không cần server\nC. Cơ sở dữ liệu NoSQL\nD. Cơ sở dữ liệu phân tán', answer: 'B. Cơ sở dữ liệu nhúng không cần server', explanation: 'SQLite là cơ sở dữ liệu nhúng, lưu trực tiếp trong file, không cần server.', tags: 'test,database,sqlite' },
+  ];
+  seeds.push(...testQuestions);
 
   // Nạp 75 câu HUBT Tin học 2 có sẵn
   for (const q of hubtQuestions) {
