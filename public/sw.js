@@ -1,8 +1,8 @@
 // FactorySearch Service Worker
 // Implements Stale-While-Revalidate for app shell, Cache-First for assets
 
-const CACHE_NAME = 'factorysearch-v1';
-const STATIC_CACHE = 'factorysearch-static-v1';
+const CACHE_NAME = 'factorysearch-v2';
+const STATIC_CACHE = 'factorysearch-static-v2';
 
 // App shell resources to pre-cache
 const APP_SHELL = [
@@ -42,6 +42,17 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
+// Utility to clean redirected responses (Fix for iOS Safari bug)
+async function cleanResponse(response) {
+  const cloned = response.clone();
+  const body = await cloned.blob();
+  return new Response(body, {
+    headers: cloned.headers,
+    status: cloned.status,
+    statusText: cloned.statusText,
+  });
+}
+
 // Fetch: Network-First for navigation, Cache-First for static assets
 self.addEventListener('fetch', (event) => {
   const { request } = event;
@@ -66,10 +77,12 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       caches.match(request).then(cached => {
         if (cached) return cached;
-        return fetch(request).then(response => {
+        return fetch(request).then(async response => {
           if (response.ok) {
-            const clone = response.clone();
+            const finalResponse = response.redirected ? await cleanResponse(response) : response;
+            const clone = finalResponse.clone();
             caches.open(STATIC_CACHE).then(cache => cache.put(request, clone));
+            return finalResponse;
           }
           return response;
         });
@@ -82,14 +95,19 @@ self.addEventListener('fetch', (event) => {
   if (request.mode === 'navigate') {
     event.respondWith(
       fetch(request)
-        .then(response => {
-          const clone = response.clone();
+        .then(async response => {
+          const finalResponse = response.redirected ? await cleanResponse(response) : response;
+          const clone = finalResponse.clone();
           caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
-          return response;
+          return finalResponse;
         })
-        .catch(() =>
-          caches.match('/index.html').then(cached => cached || new Response('Offline', { status: 503 }))
-        )
+        .catch(async () => {
+          const cached = await caches.match('/index.html');
+          if (cached && cached.redirected) {
+            return await cleanResponse(cached);
+          }
+          return cached || new Response('Offline', { status: 503 });
+        })
     );
     return;
   }
@@ -97,10 +115,16 @@ self.addEventListener('fetch', (event) => {
   // Stale-While-Revalidate for everything else
   event.respondWith(
     caches.open(CACHE_NAME).then(async cache => {
-      const cached = await cache.match(request);
-      const fetchPromise = fetch(request).then(response => {
+      let cached = await cache.match(request);
+      if (cached && cached.redirected) {
+        cached = await cleanResponse(cached);
+      }
+      
+      const fetchPromise = fetch(request).then(async response => {
         if (response.ok) {
-          cache.put(request, response.clone());
+          const finalResponse = response.redirected ? await cleanResponse(response) : response;
+          cache.put(request, finalResponse.clone());
+          return finalResponse;
         }
         return response;
       }).catch(() => cached || new Response('Network error', { status: 503 }));
