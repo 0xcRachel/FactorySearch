@@ -47,7 +47,11 @@ export class JsonDriver implements DatabaseDriver {
           // Flatten object properties (e.g. { "Tin_2": [ ... ] })
           for (const key in content) {
             if (Array.isArray(content[key])) {
-              items = items.concat(content[key]);
+              const mapped = content[key].map((q: any) => ({
+                ...q,
+                _categoryKey: key // Save the key to use as chapter/category
+              }));
+              items = items.concat(mapped);
             }
           }
         }
@@ -58,7 +62,7 @@ export class JsonDriver implements DatabaseDriver {
             id: q.id || idCounter++,
             school: q.school || 'Đại học',
             subject: q.subject || subjectName,
-            chapter: q.chapter || 'Tổng hợp',
+            chapter: q.chapter || q._categoryKey || 'Tổng hợp',
             question: q.question || '',
             answer: q.answer || '',
             explanation: q.explanation || '',

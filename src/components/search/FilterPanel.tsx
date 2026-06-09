@@ -171,9 +171,8 @@ export const FilterPanel: React.FC = () => {
   });
 
   const { data: chapters = [] } = useQuery({
-    queryKey: ['chapters', activeDriver, filters.school, filters.subject],
+    queryKey: ['chapters_list', activeDriver, filters.school, filters.subject],
     queryFn: () => driver.getChapters(filters.subject, filters.school),
-    enabled: !!filters.subject || !!filters.school,
   });
 
   const { data: tags = [] } = useQuery({
@@ -272,15 +271,14 @@ export const FilterPanel: React.FC = () => {
               {/* Chapter */}
               <div className="flex flex-col gap-1.5" id="filter-chapter-select">
                 <label className="text-xs font-semibold text-text-subtle uppercase tracking-wider">
-                  Chương
+                  Danh mục
                 </label>
                 <Combobox
                   value={filters.chapter || ''}
                   onChange={(v) => updateFilter('chapter', v)}
                   options={chapters}
-                  placeholder={filters.subject ? 'Tất cả chương' : 'Chọn môn trước'}
-                  emptyLabel="Tất cả chương"
-                  disabled={!filters.subject && !filters.school}
+                  placeholder="Tất cả danh mục"
+                  emptyLabel="Tất cả danh mục"
                 />
               </div>
 

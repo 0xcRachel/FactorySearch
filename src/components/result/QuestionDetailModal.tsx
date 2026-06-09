@@ -48,7 +48,7 @@ export const QuestionDetailModal: React.FC<QuestionDetailModalProps> = ({ questi
   };
 
   const handleCopy = () => {
-    const textToCopy = `Môn học: ${question.subject}\nChương: ${question.chapter}\n\nCâu hỏi:\n${question.question}\n\nĐáp án:\n${question.answer}\n\nLời giải chi tiết:\n${question.explanation || 'Chưa có lời giải chi tiết.'}`;
+    const textToCopy = `Môn học: ${question.subject}\nDanh mục: ${question.chapter}\n\nCâu hỏi:\n${question.question}\n\nĐáp án:\n${question.answer}\n\nLời giải chi tiết:\n${question.explanation || 'Chưa có lời giải chi tiết.'}`;
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
