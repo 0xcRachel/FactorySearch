@@ -71,7 +71,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         <div className="flex items-center gap-1.5 min-w-0 flex-wrap">
           {question.school && (
             <span className="inline-flex items-center gap-1 text-2xs font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800 uppercase tracking-wide shrink-0">
-              🏫 {question.school}
+              {question.school}
             </span>
           )}
           <span className="inline-flex items-center gap-1 text-2xs font-semibold text-brand bg-brand/5 px-2 py-0.5 rounded border border-brand/10 uppercase tracking-wide shrink-0">
@@ -116,14 +116,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
               <div
                 key={opt.letter}
                 className={`flex items-start gap-2.5 px-3 py-2 rounded-lg text-sm leading-snug ${isCorrect
-                    ? 'bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200 font-semibold'
-                    : 'bg-bg-interactive/30 border border-border-line text-text-muted'
+                  ? 'bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200 font-semibold'
+                  : 'bg-bg-interactive/30 border border-border-line text-text-muted'
                   }`}
                 style={{ transition: 'background 0.15s' }}
               >
                 <span className={`shrink-0 w-5 h-5 flex items-center justify-center rounded-full text-2xs font-bold ${isCorrect
-                    ? 'bg-emerald-500 text-white'
-                    : 'bg-bg-interactive text-text-subtle'
+                  ? 'bg-emerald-500 text-white'
+                  : 'bg-bg-interactive text-text-subtle'
                   }`}>{opt.letter}</span>
                 <span className="flex-1">{opt.text}</span>
                 {isCorrect && (

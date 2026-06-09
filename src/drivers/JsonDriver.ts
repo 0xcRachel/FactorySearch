@@ -25,49 +25,55 @@ export class JsonDriver implements DatabaseDriver {
   async init(): Promise<void> {
     if (this.loaded) return;
 
-    this.emitProgress(5, 'Đang kiểm tra dữ liệu cục bộ...');
-
-    // Try loading from localStorage cache first
+    this.emitProgress(10, 'Đang tải dữ liệu từ các file JSON...');
     try {
-      const cachedVersion = localStorage.getItem(CACHE_VERSION_KEY);
-      const cachedData = localStorage.getItem(CACHE_KEY);
+      // Automatically load all JSON files from QuestionJSON directory
+      const jsonModules = import.meta.glob('../../QuestionJSON/*.json', { eager: true });
+      let allQuestions: Question[] = [];
+      let idCounter = 1;
 
-      if (cachedData && cachedVersion === CURRENT_VERSION) {
-        this.emitProgress(50, 'Đang tải từ bộ nhớ cục bộ...');
-        this.questions = JSON.parse(cachedData);
-        this.loaded = true;
-        this.emitProgress(100, `Đã tải ${this.questions.length} câu hỏi từ bộ nhớ cục bộ!`);
-        return;
+      this.emitProgress(50, 'Đang xử lý dữ liệu...');
+      
+      for (const path in jsonModules) {
+        const module = jsonModules[path] as any;
+        const content = module.default || module;
+        
+        const subjectName = path.split('/').pop()?.replace('.json', '') || 'General';
+
+        let items: any[] = [];
+        if (Array.isArray(content)) {
+          items = content;
+        } else {
+          // Flatten object properties (e.g. { "Tin_2": [ ... ] })
+          for (const key in content) {
+            if (Array.isArray(content[key])) {
+              items = items.concat(content[key]);
+            }
+          }
+        }
+
+        // Normalize and add to list
+        for (const q of items) {
+          allQuestions.push({
+            id: q.id || idCounter++,
+            school: q.school || 'Đại học',
+            subject: q.subject || subjectName,
+            chapter: q.chapter || 'Tổng hợp',
+            question: q.question || '',
+            answer: q.answer || '',
+            explanation: q.explanation || '',
+            tags: q.tags || subjectName,
+            created_at: q.created_at || new Date().toISOString()
+          });
+        }
       }
-    } catch {
-      // Cache miss or corrupt, fall through to fetch
-    }
 
-    // Fetch from /questions.json
-    this.emitProgress(20, 'Đang tải dữ liệu từ server...');
-    try {
-      const response = await fetch('/questions.json', { cache: 'no-store' });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-
-      this.emitProgress(60, 'Đang xử lý dữ liệu...');
-      const data: Question[] = await response.json();
-
-      this.emitProgress(80, 'Đang lưu vào bộ nhớ cục bộ...');
-      this.questions = data;
-
-      // Save to localStorage for offline use
-      try {
-        localStorage.setItem(CACHE_KEY, JSON.stringify(data));
-        localStorage.setItem(CACHE_VERSION_KEY, CURRENT_VERSION);
-      } catch {
-        // localStorage might be full, still works in-memory
-        console.warn('[JsonDriver] Could not cache to localStorage (quota exceeded?)');
-      }
-
+      this.emitProgress(80, 'Đang lưu vào bộ nhớ...');
+      this.questions = allQuestions;
       this.loaded = true;
       this.emitProgress(100, `Đã tải ${this.questions.length} câu hỏi!`);
     } catch (err) {
-      throw new Error(`Không thể tải questions.json: ${err instanceof Error ? err.message : 'Network error'}`);
+      throw new Error(`Không thể tải dữ liệu JSON: ${err instanceof Error ? err.message : 'Lỗi không xác định'}`);
     }
   }
 

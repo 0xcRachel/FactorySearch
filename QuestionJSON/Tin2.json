@@ -1,0 +1,774 @@
+{
+    "Tin_2": [
+        {
+            "id": 1,
+            "question": "Phát biểu nào sau đây mô tả đúng nhất về Thị giác máy tính (Computer Vision)?",
+            "answer": "Là lĩnh vực nghiên cứu các phương pháp giúp máy tính thu nhận, phân tích và hiểu nội dung từ hình ảnh và video nhằm mô phỏng khả năng nhìn và nhận thức của con người"
+        },
+        {
+            "id": 2,
+            "question": "Chương trình nào sau đây được xem là chương trình Trí tuệ nhân tạo (AI) đầu tiên trong lịch sử?",
+            "answer": "Năm 1955 – Herbert Simon & Allen Newell với chương trình Logic Theorist"
+        },
+        {
+            "id": 3,
+            "question": "Thuật ngữ Artificial Intelligence (AI) được chính thức đề xuất và AI được xác lập như một lĩnh vực nghiên cứu độc lập vào năm nào?",
+            "answer": "1956"
+        },
+        {
+            "id": 4,
+            "question": "Khoảng thời gian nào được gọi là “Thời kỳ Mùa đông của AI lần thứ nhất” trong lịch sử phát triển Trí tuệ nhân tạo?",
+            "answer": "1974 – 1980"
+        },
+        {
+            "id": 5,
+            "question": "Phát biểu nào sau đây mô tả đúng nhất định nghĩa của Học máy (Machine Learning)?",
+            "answer": "Là lĩnh vực của AI nghiên cứu và xây dựng các kỹ thuật cho phép hệ thống tự học từ dữ liệu để thực hiện một nhiệm vụ T, cải thiện hiệu suất P dựa trên kinh nghiệm E"
+        },
+        {
+            "id": 6,
+            "question": "Trong bài toán lọc các trang Web theo sở thích của người dùng, trình tự nào sau đây mô tả đúng quá trình học máy?",
+            "answer": "Huấn luyện → Dự đoán → Đánh giá"
+        },
+        {
+            "id": 7,
+            "question": "Phát biểu nào sau đây định nghĩa đúng Học có giám sát (Supervised Learning)?",
+            "answer": "Là phương pháp học máy sử dụng dữ liệu huấn luyện đã có sẵn nhãn để học mối quan hệ giữa dữ liệu đầu vào và nhãn đầu ra"
+        },
+        {
+            "id": 8,
+            "question": "Phát biểu nào sau đây định nghĩa đúng Học không giám sát (Unsupervised Learning)?",
+            "answer": "Là phương pháp học máy sử dụng dữ liệu không có nhãn, nhằm tìm ra cấu trúc, quy luật hoặc các nhóm ẩn trong dữ liệu và không có đáp án đúng cho sẵn"
+        },
+        {
+            "id": 9,
+            "question": "Phát biểu nào sau đây định nghĩa đúng Học bán giám sát (Semi-Supervised Learning)?",
+            "answer": "Là phương pháp học máy kết hợp dữ liệu có nhãn và dữ liệu không có nhãn để huấn luyện mô hình"
+        },
+        {
+            "id": 10,
+            "question": "Phát biểu nào sau đây định nghĩa đúng Học tăng cường (Reinforcement Learning)?",
+            "answer": "Là phương pháp học máy mà tác nhân học thông qua tương tác thử – sai với môi trường, đưa ra chuỗi hành động nhằm tối đa hóa tổng phần thưởng tích lũy"
+        },
+        {
+            "id": 11,
+            "question": "Trong mạng nơ-ron nhân tạo, vai trò của bias b được mô tả đúng nhất bởi phát biểu nào sau đây?",
+            "answer": "Là một hằng số được cộng vào tổng có trọng số trước hàm kích hoạt, giúp điều chỉnh ngưỡng kích hoạt và tăng tính linh hoạt của mô hình, độc lập với dữ liệu đầu vào"
+        },
+        {
+            "id": 12,
+            "question": "Phát biểu nào sau đây mô tả đúng nguyên lý hoạt động của Mạng nơ-ron nhân tạo (ANN)?",
+            "answer": "ANN học từ kinh nghiệm thông qua quá trình huấn luyện, lưu giữ tri thức trong các tham số, sử dụng để dự đoán dữ liệu mới; mỗi nơ-ron nhận các dữ liệu đầu vào, xử lý và tạo ra một kết quả đầu ra duy nhất. Kết quả xử lý của một nơ-ron có thể làm đầu vào cho các nơ-ron khác"
+        },
+        {
+            "id": 13,
+            "question": "Phát biểu nào sau đây định nghĩa đúng Mạng nơ-ron tích chập (Convolutional Neural Network – CNN)?",
+            "answer": "Là kiến trúc mạng nơ-ron được thiết kế để xử lý dữ liệu có cấu trúc không gian, đặc biệt là hình ảnh và video"
+        },
+        {
+            "id": 14,
+            "question": "Phát biểu nào sau đây định nghĩa đúng Mạng nơ-ron hồi quy (Recurrent Neural Network – RNN)?",
+            "answer": "Là dạng đặc biệt của mạng nơ-ron được thiết kế để xử lý dữ liệu có tính tuần tự hoặc phụ thuộc theo thời gian"
+        },
+        {
+            "id": 15,
+            "question": "Cấu trúc tổng quát của một mạng nơ-ron tích chập (CNN) thường gồm các lớp chính nào sau đây?",
+            "answer": "Lớp tích chập, lớp kích hoạt, lớp gộp và lớp kết nối đầy đủ"
+        },
+        {
+            "id": 16,
+            "question": "Trong mạng nơ-ron nhân tạo, vai trò quan trọng nhất của lớp kích hoạt (Activation Layer) là gì?",
+            "answer": "Bổ sung tính phi tuyến cho mô hình, giúp mạng học được các mối quan hệ phức tạp trong dữ liệu"
+        },
+        {
+            "id": 17,
+            "question": "Trong mạng nơ-ron tích chập (CNN), vai trò chính của lớp gộp (Pooling Layer) là gì?",
+            "answer": "Giảm kích thước không gian của dữ liệu đặc trưng trong khi vẫn giữ lại các thông tin quan trọng"
+        },
+        {
+            "id": 18,
+            "question": "Trong mạng nơ-ron nhân tạo, vai trò chính của lớp kết nối đầy đủ (Fully Connected Layer) là gì?",
+            "answer": "Tổng hợp các đặc trưng đã trích xuất để đưa ra quyết định cuối cùng như phân loại hoặc hồi quy"
+        },
+        {
+            "id": 19,
+            "question": "Trong mạng nơ-ron tích chập (CNN), lớp nào sau đây có các tham số cần được học trong quá trình huấn luyện?",
+            "answer": "Lớp tích chập và lớp kết nối đầy đủ"
+        },
+        {
+            "id": 20,
+            "question": "Trong mạng nơ-ron tích chập (CNN), lớp nào sau đây không có các tham số cần được học trong quá trình huấn luyện?",
+            "answer": "Lớp gộp và lớp kích hoạt"
+        },
+        {
+            "id": 21,
+            "question": "Dữ liệu nào được dùng để huấn luyện mô hình học ra tri thức thống kê?",
+            "answer": "Dữ liệu huấn luyện (training data)"
+        },
+        {
+            "id": 22,
+            "question": "Đầu vào thực tế khi mô hình được sử dụng trong vận hành được gọi là gì?",
+            "answer": "Dữ liệu vận hành (serving data)"
+        },
+        {
+            "id": 23,
+            "question": "Khác biệt giữa dữ liệu dùng khi huấn luyện và khi vận hành làm suy giảm độ chính xác của mô hình được gọi là gì?",
+            "answer": "Độ lệch huấn luyện–vận hành"
+        },
+        {
+            "id": 24,
+            "question": "Thông tin mô tả nguồn, thời điểm và cách thu thập dữ liệu được gọi là gì?",
+            "answer": "Siêu dữ liệu"
+        },
+        {
+            "id": 25,
+            "question": "Trong khung 5V của dữ liệu lớn, chữ V nào biểu thị độ tin cậy của dữ liệu?",
+            "answer": "Veracity"
+        },
+        {
+            "id": 26,
+            "question": "Tam giác CIA trong bảo vệ dữ liệu gồm ba mục tiêu nào?",
+            "answer": "Bí mật – Toàn vẹn – Sẵn sàng"
+        },
+        {
+            "id": 27,
+            "question": "Nguyên tắc chỉ thu thập và lưu giữ dữ liệu ở mức đủ dùng cho mục tiêu được gọi là gì?",
+            "answer": "Tối thiểu hoá dữ liệu"
+        },
+        {
+            "id": 28,
+            "question": "Kỹ thuật bảo vệ dữ liệu nào thêm nhiễu có kiểm soát vào kết quả thống kê để giảm khả năng suy ra thông tin của một cá nhân?",
+            "answer": "Ẩn danh vi sai"
+        },
+        {
+            "id": 29,
+            "question": "Trong quy trình xử lý dữ liệu cho AI, bước ngay sau nạp dữ liệu là bước nào?",
+            "answer": "Làm sạch dữ liệu"
+        },
+        {
+            "id": 30,
+            "question": "Kho trung tâm dùng để lưu trữ, quản lý, chia sẻ và phục vụ đặc trưng nhất quán giữa huấn luyện và vận hành được gọi là gì?",
+            "answer": "Kho đặc trưng"
+        },
+        {
+            "id": 31,
+            "question": "Trong mã hóa dịch vòng Caesar Cipher với k = 2, chữ Y sau khi mã hóa sẽ thành gì?",
+            "answer": "A"
+        },
+        {
+            "id": 32,
+            "question": "Trong băm dữ liệu thủ công, giá trị Hash(DATA) bằng bao nhiêu?",
+            "answer": "26"
+        },
+        {
+            "id": 33,
+            "question": "Tập huấn luyện chủ yếu dùng để làm gì?",
+            "answer": "Điều chỉnh trọng số và học quy luật từ dữ liệu"
+        },
+        {
+            "id": 34,
+            "question": "Tập kiểm định chủ yếu dùng để làm gì?",
+            "answer": "Điều chỉnh siêu tham số và chọn mô hình"
+        },
+        {
+            "id": 35,
+            "question": "Tập kiểm tra được dùng vào thời điểm nào?",
+            "answer": "Sau khi hoàn tất huấn luyện và tinh chỉnh"
+        },
+        {
+            "id": 36,
+            "question": "Kỹ thuật chia dữ liệu nào đơn giản, nhanh và phù hợp với tập dữ liệu lớn?",
+            "answer": "Chia dữ liệu cố định"
+        },
+        {
+            "id": 37,
+            "question": "Phương pháp kiểm định chéo phân tầng K phần có đặc điểm nổi bật nào?",
+            "answer": "Giữ nguyên tỷ lệ các lớp trong từng phần dữ liệu"
+        },
+        {
+            "id": 38,
+            "question": "Dữ liệu nhiễu thường gây ra tác động nào rõ nhất đến quá trình huấn luyện mô hình AI?",
+            "answer": "Hàm mất mát dao động mạnh"
+        },
+        {
+            "id": 39,
+            "question": "SMOTE là kỹ thuật tăng cường dữ liệu dùng để làm gì?",
+            "answer": "Tạo mẫu nhân tạo cho lớp thiểu số"
+        },
+        {
+            "id": 40,
+            "question": "Ví dụ nào sau đây là một phép tăng cường dữ liệu cho ảnh?",
+            "answer": "Lật ảnh hoặc xoay ảnh"
+        },
+        {
+            "id": 41,
+            "question": "Chọn 3 điểm du lịch phù hợp nhất cho du khách. Một hệ thống tư vấn du lịch lưu trữ thông tin về các chuyến đi mà du khách đã hài lòng trong quá khứ. Mỗi chuyến đi được mô tả bởi 2 tiêu chí: Chi phí trung bình/ngày (triệu đồng) và mức độ yên tĩnh (thang 1–10, càng cao càng yên tĩnh). Bảng dữ liệu gán nhãn bao gồm: nhãn, vector đặc trưng (chi phí, mức yên tĩnh) như sau: Đà Lạt (1.2,8), Sa Pa (1.5,7), Hội An (1.3,6), Nha Trang (2.5,4), Vũng Tàu (2.2,3), Phú Quốc (3.0,5). Chọn 3 điểm phù hợp nhất?",
+            "answer": "Đà Lạt, Sa Pa, Hội An"
+        },
+        {
+            "id": 42,
+            "question": "Loại dữ liệu nào sau đây phù hợp nhất với mô hình mạng nơ-ron nhân tạo (ANN)?",
+            "answer": "Dữ liệu dạng bảng gồm các đặc trưng số"
+        },
+        {
+            "id": 43,
+            "question": "Loại dữ liệu nào sau đây phù hợp nhất với mô hình mạng nơ-ron tích chập (CNN)?",
+            "answer": "Dữ liệu hình ảnh và video có cấu trúc không gian"
+        },
+        {
+            "id": 44,
+            "question": "Loại dữ liệu nào sau đây phù hợp nhất với mô hình mạng nơ-ron hồi quy (RNN)?",
+            "answer": "Dữ liệu dạng chuỗi thời gian liên tục"
+        },
+        {
+            "id": 45,
+            "question": "Trong mạng nơ-ron nhân tạo (ANN), hàm kích hoạt nào sau đây thường được sử dụng cho bài toán phân lớp nhị phân?",
+            "answer": "Sigmoid"
+        },
+        {
+            "id": 46,
+            "question": "Trong mạng nơ-ron nhân tạo (ANN), hàm kích hoạt nào sau đây thường được sử dụng cho các lớp ẩn?",
+            "answer": "ReLU"
+        },
+        {
+            "id": 47,
+            "question": "Trong mạng nơ-ron nhân tạo (ANN), hàm kích hoạt nào được sử dụng phổ biến nhất trong các mạng nơ-ron sâu?",
+            "answer": "ReLU"
+        },
+        {
+            "id": 48,
+            "question": "Trong mạng nơ-ron nhân tạo (ANN), hàm kích hoạt nào sau đây thường được sử dụng cho bài toán phân lớp nhiều lớp?",
+            "answer": "Softmax"
+        },
+        {
+            "id": 49,
+            "question": "Xét một mạng nơ-ron nhân tạo ANN gồm một nơ-ron duy nhất dùng để phân loại email Spam / Không Spam dựa trên hai đặc trưng. Một email có x1 = 2 và x2 = 1. Cho trọng số: w1=1 và w2=2 và bias b=-5. Hàm kích hoạt là hàm ngưỡng: Đầu ra = 1 (Spam) nếu tổng ≥ 0, Đầu ra = 0 (Không spam) nếu tổng < 0. Email này được phân loại là gì?",
+            "answer": "Không Spam"
+        },
+        {
+            "id": 50,
+            "question": "Trong mạng nơ-ron tích chập (CNN), lớp kết nối đầy đủ thường được đặt ở vị trí nào sau đây?",
+            "answer": "Thường được đặt ở giai đoạn cuối của mạng để tổng hợp đặc trưng và đưa ra quyết định"
+        },
+        {
+            "id": 51,
+            "question": "Trong mạng nơ-ron tích chập (CNN), lớp gộp thường được đặt ở vị trí nào sau đây?",
+            "answer": "Thường được đặt sau lớp kích hoạt của lớp tích chập để giảm kích thước không gian dữ liệu đặc trưng"
+        },
+        {
+            "id": 52,
+            "question": "Trong mạng nơ-ron tích chập (CNN), lớp tích chập thường được đặt ở vị trí nào sau đây?",
+            "answer": "Thường được đặt sau lớp đầu vào hoặc sau lớp kích hoạt của lớp tích chập trước đó nhằm trích xuất đặc trưng cục bộ từ dữ liệu"
+        },
+        {
+            "id": 53,
+            "question": "Trong mạng nơ-ron tích chập (CNN), lớp kích hoạt thường được đặt ở vị trí nào sau đây?",
+            "answer": "Thường được đặt ngay sau lớp tích chập hoặc lớp kết nối đầy đủ nhằm đưa tính phi tuyến vào mô hình"
+        },
+        {
+            "id": 54,
+            "question": "Cho các lớp trong mạng nơ-ron tích chập (CNN) sau: Lớp tích chập, lớp kích hoạt, lớp gộp, lớp kết nối đầy đủ. Thứ tự sắp xếp đúng nhất của các lớp trong một kiến trúc CNN cơ bản là:",
+            "answer": "1 → 2 → 3 → 4"
+        },
+        {
+            "id": 55,
+            "question": "Quá trình xử lý dữ liệu của mạng nơ-ron hồi quy (RNN) diễn ra theo trình tự nào sau đây là đúng?",
+            "answer": "Nhận dữ liệu → Kết hợp với trạng thái trước → Cập nhật trạng thái ẩn → Sinh đầu ra"
+        },
+        {
+            "id": 56,
+            "question": "Phát biểu nào sau đây mô tả đúng nhất phương pháp huấn luyện mạng RNN bằng lan truyền ngược theo thời gian?",
+            "answer": "Sai số được tính trên toàn bộ chuỗi, gradient được lan truyền ngược từ thời điểm cuối về các thời điểm trước, và trọng số được cập nhật dựa trên toàn bộ chuỗi dữ liệu"
+        },
+        {
+            "id": 57,
+            "question": "Hai biến thể phổ biến của mạng nơ-ron hồi quy (RNN) được đề xuất nhằm khắc phục hiện tượng mất gradient và cải thiện khả năng ghi nhớ dài hạn là gì?",
+            "answer": "LSTM và GRU"
+        },
+        {
+            "id": 58,
+            "question": "Quy trình hoạt động cơ bản của một hệ thống Thị giác máy tính (Computer Vision) diễn ra theo trình tự nào sau đây là đúng?",
+            "answer": "Thu thập hình ảnh → Tiền xử lý dữ liệu → Trích xuất đặc trưng → Học và suy luận → Đưa ra kết quả"
+        },
+        {
+            "id": 59,
+            "question": "Một công ty sử dụng hệ thống AI tạo sinh để tự động tạo nội dung quảng cáo dựa trên dữ liệu khách hàng. Hệ thống này có thể tạo văn bản, hình ảnh và trả lời câu hỏi trong phạm vi dữ liệu đã được huấn luyện, nhưng không thể tự hiểu thế giới như con người hay tự học hoàn toàn các lĩnh vực mới mà không được huấn luyện lại. Từ tình huống trên, kết luận nào sau đây phù hợp nhất với bản chất của các hệ thống AI hiện nay?",
+            "answer": "Hệ thống trên vẫn thuộc AI hẹp vì chỉ hoạt động dựa trên dữ liệu và thuật toán đã huấn luyện, chưa có khả năng suy nghĩ tổng quát như con người"
+        },
+        {
+            "id": 60,
+            "question": "Một hệ thống AI được sử dụng trong máy bán hàng tự động. Khi khách hàng chọn sản phẩm và đưa tiền vào, hệ thống sẽ kiểm tra số tiền, so sánh với giá sản phẩm và xuất hàng tương ứng. Hệ thống này không lưu lại thông tin các giao dịch trước đó và cũng không thay đổi cách xử lý theo kinh nghiệm. Dựa vào đặc điểm các loại AI, hệ thống trên được xếp vào loại nào?",
+            "answer": "Máy phản ứng vì chỉ phản ứng với tình huống hiện tại dựa trên các quy tắc đã lập trình và không ghi nhớ hay học từ quá khứ"
+        },
+        {
+            "id": 61,
+            "question": "AI được huấn luyện bằng ảnh sản phẩm chụp trong điều kiện ánh sáng chuẩn, nhưng khi đưa vào vận hành tại quầy thu ngân có ánh sáng vàng thì nhận nhầm. Nguyên nhân chính là gì?",
+            "answer": "Khác biệt giữa dữ liệu huấn luyện và dữ liệu vận hành"
+        },
+        {
+            "id": 62,
+            "question": "Nếu dữ liệu huấn luyện chủ yếu chỉ gồm người dùng trẻ, còn người lớn tuổi xuất hiện rất ít, hệ AI dễ gặp rủi ro nào?",
+            "answer": "Thiên lệch do thiếu đa dạng dữ liệu"
+        },
+        {
+            "id": 63,
+            "question": "Một bộ ảnh mèo/chó bị gán nhầm nhãn khá nhiều. Hậu quả phù hợp nhất là gì?",
+            "answer": "Mô hình học sai quy luật và khó đạt hiệu năng tốt"
+        },
+        {
+            "id": 64,
+            "question": "Trong ví dụ website thương mại điện tử có click phát sinh liên tục, thành phần 5V nào được nhấn mạnh nhất?",
+            "answer": "Velocity"
+        },
+        {
+            "id": 65,
+            "question": "Hệ thống phát hiện gian lận thanh toán gần thời gian thực nên ưu tiên kiểu xử lý nào?",
+            "answer": "Xử lý theo dòng"
+        },
+        {
+            "id": 66,
+            "question": "Bài toán dự đoán tồn kho theo tuần phù hợp hơn với cách xử lý nào?",
+            "answer": "Xử lý theo lô"
+        },
+        {
+            "id": 67,
+            "question": "Dùng biến 'trạng thái hoàn tiền' để dự đoán khách hàng có hủy đơn hay không là ví dụ của vấn đề gì?",
+            "answer": "Rò rỉ dữ liệu"
+        },
+        {
+            "id": 68,
+            "question": "Hệ thống đổi tên cột từ 'dob' sang 'birth_date' nhưng pipeline không cập nhật. Đây là hiện tượng gì?",
+            "answer": "Độ lệch lược đồ dữ liệu"
+        },
+        {
+            "id": 69,
+            "question": "Cột chiều cao có nơi ghi 170, có nơi ghi 1,70. Việc cần làm trước khi huấn luyện là gì?",
+            "answer": "Chuẩn hóa đơn vị đo về cùng một chuẩn"
+        },
+        {
+            "id": 70,
+            "question": "Hai bản ghi 'Nguyễn Văn A' và 'Nguyen Van A' là cùng một người nhưng bị tính thành hai khách hàng. Rủi ro trực tiếp là gì?",
+            "answer": "Đếm trùng một thực thể"
+        },
+        {
+            "id": 71,
+            "question": "Trong bảng dữ liệu huấn luyện ban đầu, có 2 cột 'diện tích' tính theo m2 và cột 'khoảng cách đến trung tâm' tính theo m. Vì sao cần chuẩn hóa hai cột 'diện tích' và 'khoảng cách đến trung tâm' trước khi huấn luyện mô hình?",
+            "answer": "Để tránh biến có giá trị lớn chi phối quá mức mô hình"
+        },
+        {
+            "id": 72,
+            "question": "Trong bảng dữ liệu huấn luyện ban đầu, cột 'phương thức thanh toán' gồm tiền mặt, thẻ, chuyển khoản cần được xử lý thế nào trước khi đưa vào mô hình?",
+            "answer": "Mã hóa biến phân loại thành dạng số"
+        },
+        {
+            "id": 73,
+            "question": "Nếu tính giá trị trung bình trên toàn bộ dữ liệu rồi mới chia train/test để chuẩn hóa, vấn đề nào sẽ xuất hiện?",
+            "answer": "Rò rỉ thông tin từ tập kiểm tra"
+        },
+        {
+            "id": 74,
+            "question": "Đặc trưng 'số lần gọi hỗ trợ trong 30 ngày' thuộc kiểu biến đổi nào?",
+            "answer": "Tổng hợp theo cửa sổ thời gian"
+        },
+        {
+            "id": 75,
+            "question": "Khi huấn luyện một mô hình AI sử dụng trong tài chính cá nhân, vì sao đặc trưng 'tỷ lệ chi tiêu/thu nhập' thường hữu ích hơn dùng riêng từng biến?",
+            "answer": "Vì đây là đặc trưng miền phản ánh rủi ro rõ hơn"
+        },
+        {
+            "id": 76,
+            "question": "Hệ thống nhận 2.000 giao dịch/phút, mỗi giao dịch 2 KB. Dung lượng dữ liệu mỗi giờ xấp xỉ là bao nhiêu?",
+            "answer": "240 MB/giờ"
+        },
+        {
+            "id": 77,
+            "question": "Hệ thống nhận 5.500 giao dịch/phút, mỗi giao dịch 2 KB. Dung lượng dữ liệu mỗi giờ xấp xỉ là bao nhiêu?",
+            "answer": "660 MB/giờ"
+        },
+        {
+            "id": 78,
+            "question": "Kiến trúc nào phù hợp nhất cho dữ liệu báo cáo, thống kê, dashboard có cấu trúc rõ ràng?",
+            "answer": "Kho dữ liệu"
+        },
+        {
+            "id": 79,
+            "question": "Kiến trúc nào phù hợp nhất để lưu trữ dữ liệu thô như ảnh và log với khối lượng lớn?",
+            "answer": "Hồ dữ liệu"
+        },
+        {
+            "id": 80,
+            "question": "Một công ty triển khai AI xét duyệt vay vốn. Hệ thống đạt độ chính xác cao hơn nhân viên nhưng từ chối nhiều hồ sơ ở khu vực thu nhập thấp. Ban giám đốc cho rằng \"AI không phân biệt ai cả vì chỉ học từ dữ liệu\". Nhận định nào hợp lý nhất?",
+            "answer": "Nếu dữ liệu quá khứ có thiên lệch, AI có thể tái tạo bất công ở quy mô lớn hơn"
+        },
+        {
+            "id": 81,
+            "question": "Một chatbot tư vấn sức khỏe tâm lý trả lời rất tự tin dù không đủ chuyên môn. Điều gì khiến tình huống này nguy hiểm hơn một website thông thường?",
+            "answer": "Người dùng thường có xu hướng tin phản hồi mang tính hội thoại và cá nhân hóa"
+        },
+        {
+            "id": 82,
+            "question": "Một trường đại học dùng AI để phát hiện \"sinh viên có nguy cơ bỏ học\". Hệ thống phân tích điểm số, số lần đăng nhập LMS và thời gian online. Điều nào là vấn đề đáng lo nhất?",
+            "answer": "AI có thể tạo nhãn tiêu cực làm ảnh hưởng cơ hội học tập của sinh viên"
+        },
+        {
+            "id": 83,
+            "question": "Một công ty dùng AI đánh giá hiệu suất nhân viên dựa vào thời gian online, số email gửi đi và thời lượng họp. Nhân viên phản ánh hệ thống \"không hiểu bản chất công việc\". Điều nào mô tả chính xác nhất rủi ro của hệ thống?",
+            "answer": "AI đang tối ưu sai chỉ số đo lường thay vì giá trị thực tế của công việc"
+        },
+        {
+            "id": 84,
+            "question": "Một AI tuyển dụng loại nhiều ứng viên nữ hơn nam. Công ty giải thích rằng \"AI chỉ học từ dữ liệu tuyển dụng thành công trong quá khứ\". Vấn đề cốt lõi nằm ở đâu?",
+            "answer": "Dữ liệu lịch sử có thể phản ánh định kiến xã hội trước đó"
+        },
+        {
+            "id": 85,
+            "question": "Một doanh nghiệp cho rằng: \"Miễn là luật chưa cấm thì công ty có quyền triển khai AI\". Nhận định nào phù hợp nhất?",
+            "answer": "Chưa đủ vì có những hành vi hợp pháp nhưng vẫn gây hại đạo đức và xã hội"
+        },
+        {
+            "id": 86,
+            "question": "AI chấm điểm tín dụng từ chối một khách hàng nhưng không giải thích nguyên nhân. Người dùng yêu cầu được biết lý do nhưng công ty từ chối vì \"bí mật thuật toán\". Xung đột chính ở đây là gì?",
+            "answer": "Xung đột giữa quyền giải thích và quyền bảo mật công nghệ"
+        },
+        {
+            "id": 87,
+            "question": "Một hệ thống AI nhận diện khuôn mặt hoạt động chính xác với người trưởng thành nhưng sai nhiều với trẻ em và người da màu. Điều nào đáng lo nhất?",
+            "answer": "Sai lệch kỹ thuật có thể dẫn đến hậu quả xã hội không công bằng"
+        },
+        {
+            "id": 88,
+            "question": "Một nhóm kỹ sư phát hiện AI có khả năng dự đoán sai nhưng ban quản lý vẫn yêu cầu triển khai để kịp tiến độ. Trong tình huống này, điều nào phản ánh trách nhiệm nghề nghiệp phù hợp nhất?",
+            "answer": "Kỹ sư nên báo cáo rủi ro thay vì im lặng triển khai"
+        },
+        {
+            "id": 89,
+            "question": "Tại sao câu \"AI quyết định chứ không phải con người\" là cách lập luận nguy hiểm?",
+            "answer": "Vì AI không có tư cách pháp lý và trách nhiệm đạo đức độc lập"
+        },
+        {
+            "id": 90,
+            "question": "Một công ty dùng deepfake trong quảng cáo nhưng ghi rất nhỏ rằng \"hình ảnh chỉ mang tính minh họa\". Điều nào là tranh luận hợp lý nhất?",
+            "answer": "Minh bạch hình thức chưa chắc đồng nghĩa minh bạch thực chất"
+        },
+        {
+            "id": 91,
+            "question": "Một trường học triển khai AI giám sát thi trực tuyến bằng webcam, phân tích ánh mắt và âm thanh. Điều nào là tranh luận mạnh nhất phản đối hệ thống?",
+            "answer": "AI có thể xâm phạm quyền riêng tư vượt quá mục tiêu kiểm tra"
+        },
+        {
+            "id": 92,
+            "question": "Một kỹ sư được yêu cầu thu thập \"càng nhiều dữ liệu càng tốt để phòng trường hợp cần dùng sau này\". Theo nguyên tắc bảo vệ dữ liệu, vấn đề lớn nhất là gì?",
+            "answer": "Thu thập vượt quá mục đích cần thiết làm tăng rủi ro lạm dụng"
+        },
+        {
+            "id": 93,
+            "question": "Một công ty AI nói rằng: \"Nếu người dùng đồng ý điều khoản sử dụng thì doanh nghiệp được phép dùng dữ liệu theo mọi cách\". Điều nào hợp lý nhất?",
+            "answer": "Sự đồng ý hình thức chưa chắc phản ánh hiểu biết thực sự của người dùng"
+        },
+        {
+            "id": 94,
+            "question": "Trong một vụ AI gây thiệt hại, việc xác định trách nhiệm thường khó vì lý do nào?",
+            "answer": "Quy trình phát triển AI liên quan nhiều bên và dữ liệu phức tạp"
+        },
+        {
+            "id": 95,
+            "question": "Một doanh nghiệp muốn dùng AI để \"dự đoán nhân viên có khả năng nghỉ việc\". Điều nào là rủi ro đạo đức lớn nhất?",
+            "answer": "AI có thể tạo thành công cụ giám sát tâm lý và hành vi quá mức"
+        },
+        {
+            "id": 96,
+            "question": "Nếu AI phân tích dữ liệu cá nhân để tối ưu quảng cáo mà người dùng không hề biết, nguyên tắc nào bị ảnh hưởng mạnh nhất?",
+            "answer": "Quyền riêng tư và minh bạch"
+        },
+        {
+            "id": 97,
+            "question": "Điều nào mô tả đúng nhất mối quan hệ giữa đạo đức AI và pháp luật AI?",
+            "answer": "Pháp luật là mức tối thiểu, đạo đức thường yêu cầu cao hơn"
+        },
+        {
+            "id": 98,
+            "question": "Một AI đánh giá \"nguy cơ phạm tội\" dựa trên khu vực sinh sống. Điều nào là nguy hiểm nhất nếu triển khai thiếu kiểm soát?",
+            "answer": "AI có thể củng cố định kiến xã hội thành quyết định tự động"
+        },
+        {
+            "id": 99,
+            "question": "Data poisoning nguy hiểm vì lý do nào?",
+            "answer": "Làm AI học sai ngay từ dữ liệu huấn luyện"
+        },
+        {
+            "id": 100,
+            "question": "Một công ty lưu log chatbot chứa số điện thoại, email và nội dung hội thoại vô thời hạn. Điều nào là rủi ro đáng lo nhất?",
+            "answer": "Dữ liệu cá nhân có thể bị lạm dụng hoặc rò rỉ về sau"
+        },
+        {
+            "id": 101,
+            "question": "Một AI nhận diện khuôn mặt trong trường học bị rò rỉ dữ liệu sinh trắc học. Điều nào khiến hậu quả nghiêm trọng hơn rò rỉ mật khẩu thông thường?",
+            "answer": "Dữ liệu sinh trắc học khó thay đổi hoặc thu hồi"
+        },
+        {
+            "id": 102,
+            "question": "Tại sao \"minimize data\" được xem là nguyên tắc quan trọng?",
+            "answer": "Vì chỉ thu thập dữ liệu cần thiết sẽ giảm rủi ro đạo đức và bảo mật"
+        },
+        {
+            "id": 103,
+            "question": "Một kỹ sư AI giỏi trong tương lai khác lập trình viên truyền thống ở điểm nào quan trọng nhất?",
+            "answer": "Hiểu tác động xã hội của hệ thống mình xây dựng"
+        },
+        {
+            "id": 104,
+            "question": "Khi doanh nghiệp triển khai AI để giảm nhân sự chăm sóc khách hàng, điều nào cần cân nhắc ngoài chi phí?",
+            "answer": "Khả năng thay đổi trải nghiệm và niềm tin của khách hàng"
+        },
+        {
+            "id": 105,
+            "question": "Một hệ thống AI có độ chính xác 98% nhưng sai trong các trường hợp hiếm gặp nghiêm trọng. Điều nào phù hợp nhất?",
+            "answer": "Cần đánh giá cả hậu quả của sai sót chứ không chỉ tỷ lệ đúng"
+        },
+        {
+            "id": 106,
+            "question": "Điều nào phản ánh đúng \"AI bền vững\"?",
+            "answer": "AI phải cân bằng lợi ích công nghệ với tác động xã hội và môi trường"
+        },
+        {
+            "id": 107,
+            "question": "Một sinh viên dùng AI để hỗ trợ học tập. Trường hợp nào sau đây có nguy cơ đạo đức cao nhất?",
+            "answer": "Dùng AI làm toàn bộ bài tập nhưng trình bày như sản phẩm cá nhân"
+        },
+        {
+            "id": 108,
+            "question": "Điều nào \"nghe hợp lý\" nhưng thực ra nguy hiểm nhất khi triển khai AI?",
+            "answer": "Cứ thu thập dữ liệu trước rồi tính sau"
+        },
+        {
+            "id": 109,
+            "question": "Một AI giúp tăng lợi nhuận mạnh nhưng làm người dùng phụ thuộc tâm lý vào nền tảng. Điều nào khó đánh giá nhất?",
+            "answer": "Ranh giới giữa tối ưu trải nghiệm và thao túng hành vi"
+        },
+        {
+            "id": 110,
+            "question": "Tại sao \"AI trung lập\" đôi khi là nhận định gây hiểu lầm?",
+            "answer": "Vì dữ liệu và mục tiêu thiết kế thường phản ánh lựa chọn của con người"
+        },
+        {
+            "id": 111,
+            "question": "Một công ty nói: \"AI của chúng tôi không dùng giới tính nên chắc chắn công bằng\". Điều nào phản biện mạnh nhất?",
+            "answer": "Bias có thể xuất hiện gián tiếp qua dữ liệu khác liên quan đến giới tính"
+        },
+        {
+            "id": 112,
+            "question": "Một AI phân tích cảm xúc khách hàng qua giọng nói. Điều nào là tranh cãi lớn nhất?",
+            "answer": "Việc suy luận cảm xúc có thể vượt quá sự đồng ý của người dùng"
+        },
+        {
+            "id": 113,
+            "question": "Nếu một AI đưa ra quyết định sai nhưng không ai hiểu cơ chế hoạt động của nó, rủi ro lớn nhất là gì?",
+            "answer": "Khó xác định nguyên nhân và trách nhiệm khi xảy ra hậu quả"
+        },
+        {
+            "id": 114,
+            "question": "Một kỹ sư AI có trách nhiệm nên ưu tiên câu hỏi nào trước khi triển khai hệ thống?",
+            "answer": "AI này có thể gây hại cho ai và trong tình huống nào?"
+        },
+        {
+            "id": 115,
+            "question": "Khi nói về thành phần cấu tạo, một Framework AI tiêu chuẩn bắt buộc phải tích hợp sẵn những yếu tố nền tảng nào sau đây?",
+            "answer": "Các thư viện lập trình sẵn, công cụ hỗ trợ và các cấu trúc mã nguồn để xây dựng mô hình trí tuệ nhân tạo"
+        },
+        {
+            "id": 116,
+            "question": "Điểm khác biệt cốt lõi giữa một \"Framework AI\" và một \"Ngôn ngữ lập trình thông thường\" (như Python) trong phát triển ứng dụng thông minh là gì?",
+            "answer": "Framework AI cung cấp sẵn khung kiến trúc toán học chuyên biệt, còn ngôn ngữ lập trình chỉ cung cấp cú pháp lệnh cơ bản"
+        },
+        {
+            "id": 117,
+            "question": "Phát biểu nào sau đây phản ánh đầy đủ và chính xác nhất về bản chất của một Framework AI?",
+            "answer": "Là một nền tảng phần mềm cung cấp sẵn các thư viện, công cụ và cấu trúc lập trình để phát triển các mô hình trí tuệ nhân tạo"
+        },
+        {
+            "id": 118,
+            "question": "Khi phân tích khái niệm Framework AI, cụm từ nào sau đây mô tả đúng nhất 3 giai đoạn cốt lõi trong vòng đời của mô hình AI mà framework này trực tiếp hỗ trợ kỹ thuật?",
+            "answer": "Giai đoạn xây dựng cấu trúc mô hình, giai đoạn huấn luyện tham số và giai đoạn triển khai ứng dụng thực tế"
+        },
+        {
+            "id": 119,
+            "question": "Framework TensorFlow được phân loại là loại nền tảng công nghệ nào và phân phối theo hình thức bản quyền nào sau đây?",
+            "answer": "Là một nền tảng phần mềm mã nguồn mở hỗ trợ phát triển các mô hình học máy và học sâu của Google"
+        },
+        {
+            "id": 120,
+            "question": "Khi một doanh nghiệp quyết định lựa chọn TensorFlow làm công cụ cốt lõi để phát triển sản phẩm AI, đặc tính hệ sinh thái nào của framework này mang lại lợi ích thực tế lớn nhất?",
+            "answer": "Khả năng cung cấp các công cụ triển khai đa nền tảng linh hoạt từ máy chủ đám mây đến các thiết bị di động"
+        },
+        {
+            "id": 121,
+            "question": "Nền tảng công nghệ nào sau đây phản ánh chính xác nguồn gốc phát triển ban đầu và đặc trưng cú pháp thiết kế cốt lõi của framework PyTorch?",
+            "answer": "Do tập đoàn Meta (Facebook) phát triển và sử dụng cú pháp mang phong cách tự nhiên, gần gũi với ngôn ngữ Python"
+        },
+        {
+            "id": 122,
+            "question": "Khi đánh giá về ưu điểm thiết kế cấu trúc, lý do chính yếu nào giúp PyTorch trở thành framework được ưu tiên lựa chọn hàng đầu trong các dự án nghiên cứu học thuật về AI?",
+            "answer": "Tính linh hoạt cao nhờ cơ chế đồ thị tính toán động giúp lập trình viên dễ dàng tùy biến, thử nghiệm mô hình"
+        },
+        {
+            "id": 123,
+            "question": "Trong cấu trúc các thành phần chính của PyTorch, tiểu mô-đun Autograd đóng vai trò cốt lõi nào sau đây trong quá trình huấn luyện mạng nơ-ron?",
+            "answer": "Tự động tính toán các đạo hàm phục vụ cho thuật toán lan truyền ngược"
+        },
+        {
+            "id": 124,
+            "question": "Khi lập trình một mạng nơ-ron nhân tạo bằng framework PyTorch, sự phối hợp chức năng giữa hai mô-đun torch.nn và torch.optim được thể hiện như thế nào?",
+            "answer": "Mô-đun torch.nn dùng để định nghĩa các tầng liên kết, còn mô-đun torch.optim dùng để cập nhật trọng số"
+        },
+        {
+            "id": 125,
+            "question": "Công ty của bạn cần phát triển gấp một ứng dụng nhận diện khuôn mặt trong vòng 2 tuần. Để tối ưu hóa thời gian và công sức theo đúng vai trò của Framework AI, đội ngũ lập trình nên thực hiện giải pháp nào sau đây?",
+            "answer": "Sử dụng các cấu trúc mạng lớp và hàm tối ưu có sẵn của một Framework AI như PyTorch"
+        },
+        {
+            "id": 126,
+            "question": "Khi huấn luyện một mạng nơ-ron sâu với tập dữ liệu lớn gồm hàng triệu hình ảnh, mô hình chạy rất chậm trên CPU. Để áp dụng vai trò \"Tối ưu hóa hiệu suất\" của Framework AI, hành động nào sau đây là phù hợp nhất?",
+            "answer": "Cấu hình mã nguồn Framework để chuyển cấu trúc tính toán ma trận sang các chip tăng tốc GPU"
+        },
+        {
+            "id": 127,
+            "question": "Khi phát triển một ứng dụng phân loại văn bản tự động, lập trình viên quyết định gọi hàm tối ưu hóa và hàm mất mát từ thư viện framework thay vì tự viết các công thức đạo hàm. Hành động này thể hiện sự vận dụng vai trò nào của Framework AI?",
+            "answer": "Giải phóng lập trình viên khỏi việc viết mã từ đầu, giúp tiết kiệm thời gian và công sức thiết kế"
+        },
+        {
+            "id": 128,
+            "question": "Giả sử bạn được giao nhiệm vụ triển khai một mô hình phân loại văn bản lên hệ thống máy chủ đám mây (Cloud) để phục vụ hàng ngàn người dùng thực tế. Việc sử dụng các công cụ tích hợp sẵn của Framework AI (như TensorFlow Serving hay TorchScript) giúp giải quyết vấn đề gì?",
+            "answer": "Chuyển đổi và đóng gói mô hình thành định dạng tối ưu để triển khai diện rộng với độ trễ thấp nhất"
+        },
+        {
+            "id": 129,
+            "question": "Một nhóm nghiên cứu đang xây dựng một ứng dụng nhận diện biển số xe sử dụng mạng nơ-ron tích chập (CNN). Để có thể tùy biến sâu các hàm tối ưu, tự định nghĩa các vòng lặp huấn luyện chi tiết và can thiệp trực tiếp vào quá trình tính đạo hàm tự động theo thời gian thực, framework nào sau đây là lựa chọn phù hợp nhất?",
+            "answer": "Framework PyTorch nhờ cơ chế đồ thị tính toán động giúp tùy biến mô hình một cách linh hoạt khi chạy"
+        },
+        {
+            "id": 130,
+            "question": "Khi thực hiện chương trình lập trình mạng nơ-ron bằng PyTorch để giải bài toán học quy luật dữ liệu, một lập trình viên khai báo: y = torch.tensor([[2], [4], [6], [8]], dtype=torch.float32). Thao tác áp dụng này đóng vai trò kỹ thuật trực tiếp nào sau đây trong chương trình?",
+            "answer": "Định dạng và chuyển đổi tập dữ liệu mục tiêu (nhãn) sang dạng ma trận phân tích của PyTorch"
+        },
+        {
+            "id": 131,
+            "question": "Trong mã nguồn lập trình mạng nơ-ron bằng PyTorch, dòng lệnh import torch.optim as optim phục vụ trực tiếp cho thao tác áp dụng nào dưới đây của chương trình?",
+            "answer": "Gọi các thuật toán tối ưu hóa (như SGD, Adam) phục vụ quá trình cập nhật các hệ số trọng số"
+        },
+        {
+            "id": 132,
+            "question": "Lập trình viên muốn áp dụng thư viện Keras chạy trên nền tảng TensorFlow để định nghĩa một mạng nơ-ron nhân tạo có cấu trúc các lớp xếp chồng tuần tự lên nhau. Cú pháp khởi tạo mô hình nào sau đây là chuẩn xác nhất?",
+            "answer": "model = tf.keras.Sequential()"
+        },
+        {
+            "id": 133,
+            "question": "Nhóm phát triển phần mềm được yêu cầu viết mã nguồn huấn luyện mô hình dự báo hành vi khách hàng bằng thuật toán Phân lớp truyền thống. Để tiết kiệm tài nguyên và không phải dùng đến các mô hình Deep Learning phức tạp, framework nào nên được áp dụng?",
+            "answer": "Áp dụng thư viện Scikit-learn để gọi trực tiếp thuật toán phân lớp từ mô-đun học máy có sẵn"
+        },
+        {
+            "id": 134,
+            "question": "Khi thiết lập một chương trình hồi quy bằng PyTorch, câu lệnh loss_fn = nn.MSELoss() được viết trong chương trình nhằm mục đích trực tiếp nào dưới đây?",
+            "answer": "Định nghĩa hàm mất mát dạng bình phương sai số trung bình để đo lường độ lệch của mô hình"
+        },
+        {
+            "id": 135,
+            "question": "Trong đoạn mã nguồn PyTorch cấu hình mạng nơ-ron: model = nn.Sequential(nn.Linear(1, 1)), nếu lập trình viên thực hiện thay đổi thành lệnh nn.Linear(1, 5), thao tác áp dụng này sẽ làm thay đổi cấu trúc mạng như thế nào?",
+            "answer": "Làm thay đổi số lượng nút mạng (neurons) ở tầng đầu ra từ 1 nút mạng tăng lên thành 5 nút mạng"
+        },
+        {
+            "id": 136,
+            "question": "Một doanh nghiệp công nghệ muốn xây dựng một mô hình ngôn ngữ lớn và cần một framework có hiệu năng cực cao, hỗ trợ tối ưu hóa mô hình trên cả hạ tầng đám mây lẫn thiết bị biên (Edge AI). Framework nào sau đây phù hợp nhất với định hướng phát triển này?",
+            "answer": "Framework mã nguồn mở TensorFlow"
+        },
+        {
+            "id": 137,
+            "question": "Khi viết mã nguồn huấn luyện mạng nơ-ron bằng PyTorch, tại sao ở mỗi vòng lặp (epoch), lập trình viên bắt buộc phải sử dụng câu lệnh optimizer.zero_grad() trước khi thực hiện bước lan truyền ngược?",
+            "answer": "Để xóa các giá trị đạo hàm đã tính ở vòng lặp trước, tránh việc tích lũy sai số làm lệch trọng số"
+        },
+        {
+            "id": 138,
+            "question": "Khi sử dụng thư viện Scikit-learn để giải bài toán hồi quy tuyến tính trong thực tế, cú pháp lệnh nào sau đây được áp dụng để huấn luyện mô hình tìm ra quy luật từ tập dữ liệu X_train và y_train?",
+            "answer": "model.fit(X_train, y_train)"
+        },
+        {
+            "id": 139,
+            "question": "Trong quá trình huấn luyện một mô hình học sâu bằng TensorFlow, một kỹ sư phát hiện hàm mất mát giảm rất chậm và muốn theo dõi trực quan biểu đồ độ đường cong học tập (learning curves) cũng như cấu trúc các tầng liên kết theo thời gian thực. Công cụ tích hợp nào của TensorFlow cần được áp dụng để giải quyết nhu cầu này?",
+            "answer": "Áp dụng công cụ TensorBoard để khởi tạo máy chủ cục bộ xuất giao diện trực quan hóa các tham số"
+        },
+        {
+            "id": 140,
+            "question": "Lập trình viên đang thiết kế một ứng dụng phân loại hình ảnh bằng TensorFlow và muốn tối ưu hóa tốc độ thực thi bằng cách biên dịch toàn bộ các phép toán ma trận thành một luồng tính toán cố định trước khi nạp dữ liệu. Thành phần cốt lõi nào của framework này đang được áp dụng trực tiếp?",
+            "answer": "Sử dụng thành phần Computational Graph để biểu diễn chuỗi các phép toán dưới dạng sơ đồ dòng chảy dữ liệu"
+        },
+        {
+            "id": 141,
+            "question": "Khi xây dựng một mạng nơ-ron nhân tạo bằng PyTorch để xử lý bài toán phân tích dữ liệu, câu lệnh cú pháp nào sau đây được áp dụng để khởi tạo một tầng liên kết tuyến tính đầy đủ nhận đầu vào gồm 4 đặc trưng và phân phối ra 8 nút mạng ở tầng tiếp theo?",
+            "answer": "model_layer = nn.Linear(in_features=4, out_features=8)"
+        },
+        {
+            "id": 142,
+            "question": "Lập trình viên đang viết vòng lặp huấn luyện (training loop) cho mô hình PyTorch và chuẩn bị thực hiện bước lan truyền ngược để tính toán đạo hàm. Thao tác áp dụng nào sau đây bắt buộc phải thực hiện ngay trước câu lệnh loss.backward() để tránh hiện tượng cộng dồn sai số từ các chu kỳ trước?",
+            "answer": "Thực hiện câu lệnh optimizer.zero_grad() để xóa sạch các giá trị đạo hàm cũ về trạng thái bằng không"
+        },
+        {
+            "id": 143,
+            "question": "Trong quá trình tối ưu hóa một mạng nơ-ron hồi quy bằng PyTorch, lập trình viên muốn sử dụng thuật toán hạ độ dốc ngẫu nhiên với tốc độ học (learning rate) được thiết lập cố định ở mức 0.01. Cú pháp khai báo thành phần tối ưu nào sau đây được áp dụng chuẩn xác?",
+            "answer": "optimizer = optim.SGD(model.parameters(), lr=0.01)"
+        },
+        {
+            "id": 144,
+            "question": "Khi chuẩn bị nạp một danh sách các số thực từ mảng dữ liệu thông thường vào cấu trúc mạng nơ-ron của PyTorch để huấn luyện, thao tác biến đổi dữ liệu nào sau đây cần được áp dụng để hệ thống không xảy ra lỗi xung đột kiểu dữ liệu ma trận?",
+            "answer": "Sử dụng hàm torch.tensor() kết hợp tham số dtype=torch.float32 để chuyển đổi mảng sang dạng Tensor"
+        },
+        {
+            "id": 145,
+            "question": "Khi so sánh đặc tính kỹ thuật giữa hai framework học sâu hàng đầu là TensorFlow và PyTorch, nhận định nào sau đây phản ánh chính xác nhất về sự khác biệt giữa chúng?",
+            "answer": "TensorFlow mạnh về khả năng đóng gói để triển khai mô hình trong doanh nghiệp, trong khi PyTorch mạnh về tính linh hoạt phục vụ nghiên cứu AI"
+        },
+        {
+            "id": 146,
+            "question": "Điểm khác biệt cốt lõi về phạm vi ứng dụng và kiến trúc giữa thư viện Scikit-learn và framework Keras trong hệ sinh thái Python là gì?",
+            "answer": "Scikit-learn tập trung vào thuật toán học máy truyền thống, còn Keras là thư viện cấp cao chuyên phục vụ xây dựng nhanh mạng nơ-ron sâu"
+        },
+        {
+            "id": 147,
+            "question": "Khi phân tích cấu trúc kỹ thuật của PyTorch, điểm khác biệt cốt lõi về cơ chế hoạt động giữa hai mô-đun thành phần Autograd và torch.optim là gì?",
+            "answer": "Mô-đun Autograd tự động tính toán các giá trị đạo hàm của hàm mất mát, còn mô-đun torch.optim thực hiện cập nhật hệ số trọng số"
+        },
+        {
+            "id": 148,
+            "question": "Điểm khác biệt lớn nhất về mặt chức năng lập trình giữa thành phần Tensor của PyTorch so với mảng đa chiều ndarray thông thường của thư viện NumPy là gì?",
+            "answer": "Tensor hỗ trợ tính toán song song trên GPU và tự động tính đạo hàm, còn mảng đa chiều của NumPy chỉ tính toán độc lập trên nền tảng CPU"
+        },
+        {
+            "id": 149,
+            "question": "Khi phân tích về mức độ dễ học và tiếp cận hệ thống đối với người mới bắt đầu lập trình AI, điểm khác biệt lớn nhất giữa PyTorch và TensorFlow là gì?",
+            "answer": "PyTorch sử dụng phong cách viết mã gần gũi với ngôn ngữ Python thông thường, còn TensorFlow đòi hỏi hiểu sâu về cấu trúc đồ thị tĩnh phức tạp"
+        },
+        {
+            "id": 150,
+            "question": "Xét về khía cạnh \"Hỗ trợ nghiên cứu học thuật\", tại sao framework PyTorch thường được các nhà khoa học và viện nghiên cứu ưu tiên lựa chọn nhiều hơn TensorFlow?",
+            "answer": "Vì PyTorch sở hữu cơ chế đồ thị tính toán động giúp lập trình viên dễ dàng tùy biến, thay đổi cấu trúc mạng nơ-ron ngay khi đang chạy"
+        },
+        {
+            "id": 151,
+            "question": "Khác biệt cốt lõi nào về mặt kiến trúc tính toán giữa TensorFlow và PyTorch ảnh hưởng trực tiếp đến quy trình gỡ lỗi?",
+            "answer": "TensorFlow xây dựng đồ thị tĩnh nên khó theo dõi lỗi dòng dữ liệu, còn PyTorch xây dựng đồ thị động giúp gỡ lỗi trực tiếp như mã Python"
+        },
+        {
+            "id": 152,
+            "question": "Khi một doanh nghiệp công nghệ lớn ưu tiên tiêu chí \"Triển khai doanh nghiệp\" quy mô lớn và đa nền tảng, lý do nào khiến TensorFlow thường được đánh giá cao hơn PyTorch?",
+            "answer": "TensorFlow tích hợp hệ sinh thái công cụ mạnh mẽ và tối ưu hóa tốt cho việc đưa mô hình lên máy chủ đám mây hoặc thiết bị nhúng"
+        },
+        {
+            "id": 153,
+            "question": "Đâu là sự khác biệt chính yếu về đơn vị phát triển nền tảng đứng sau chống lưng cho hai hệ sinh thái framework học sâu TensorFlow và PyTorch?",
+            "answer": "TensorFlow được phát triển và tối ưu hóa bởi tập đoàn Google, trong khi PyTorch được xây dựng và hỗ trợ mạnh mẽ bởi tập đoàn Meta"
+        },
+        {
+            "id": 154,
+            "question": "Khi so sánh về tính linh hoạt trong việc thiết kế các kiến trúc mạng nơ-ron tiên tiến và phức tạp, nhận định nào sau đây là chuẩn xác nhất?",
+            "answer": "TensorFlow giới hạn người dùng trong các cấu trúc lớp xếp chồng cố định, còn PyTorch cho phép can thiệp sâu vào từng dòng lệnh tính toán"
+        }
+    ]
+}

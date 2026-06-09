@@ -5,15 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build-json && tsc -b && vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "copy-wasm": "node -e \"const fs = require('fs'); fs.mkdirSync('public', {recursive: true}); fs.copyFileSync('node_modules/sql.js/dist/sql-wasm.wasm', 'public/sql-wasm.wasm');\"",
-    "build-db": "vite-node scripts/build-database.ts",
-    "build-json": "vite-node scripts/build-json.ts"
+    "build-db": "vite-node scripts/build-database.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.101.0",
