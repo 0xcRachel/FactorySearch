@@ -1,0 +1,509 @@
+{
+  "Python": [
+    {
+      "id": 1,
+      "question": "Khoa học dữ liệu có những nhiệm vụ nào?",
+      "answer": "Tất cả các đáp án trên (Phân tích, Tổng hợp, Tối ưu hóa dữ liệu)"
+    },
+    {
+      "id": 2,
+      "question": "NumPy là viết tắt của từ gì?",
+      "answer": "Numerical Python"
+    },
+    {
+      "id": 3,
+      "question": "NumPy, Pandas, Matplotlib, Seaborn, Scikit learning, ... là các thư viện trong Python để hỗ trợ?",
+      "answer": "Khoa học dữ liệu"
+    },
+    {
+      "id": 4,
+      "question": "Thư viện nào trong Python dùng để thao tác và phân tích dữ liệu như mã nguồn mở, xử lý tập dữ liệu có định dạng khác nhau, import từ nhiều nguồn khác nhau?",
+      "answer": "Pandas"
+    },
+    {
+      "id": 5,
+      "question": "Thư viện nào trong Python dùng sử dụng trong các tập lệnh, trình bao, máy chủ ứng dụng web và các bộ công cụ GUI khác hoặc vẽ đồ thị?",
+      "answer": "Matplotlib"
+    },
+    {
+      "id": 6,
+      "question": "Các hàm: around, floor, ceil, real, amin, amax, ... là hàm thuộc thư viện nào?",
+      "answer": "NumPy"
+    },
+    {
+      "id": 7,
+      "question": "Hàm Pyplot là hàm thuộc thư viện nào?",
+      "answer": "Matplotlib"
+    },
+    {
+      "id": 8,
+      "question": "Thư viện Pandas làm việc với kiểu cấu trúc dữ liệu nào?",
+      "answer": "Tất cả các cấu trúc trên (Series, DataFrame, Panel)"
+    },
+    {
+      "id": 9,
+      "question": "Có mấy giai đoạn tiến hóa cho AI?",
+      "answer": "3"
+    },
+    {
+      "id": 10,
+      "question": "Phân loại Machine Learning gồm?",
+      "answer": "Tất cả các loại trên (Supervised Learning, UnSupervised Learning, Reinforcement Learning)"
+    },
+    {
+      "id": 11,
+      "question": "Artificial Narrow Intelligence chỉ áp dụng AI cho?",
+      "answer": "Các nhiệm vụ cụ thể"
+    },
+    {
+      "id": 12,
+      "question": "Artificial General Intelligence chỉ áp dụng AI cho?",
+      "answer": "Thực hiện bất kỳ nhiệm vụ nào mà con người có thể thực hiện được"
+    },
+    {
+      "id": 13,
+      "question": "Artificial Super Intelligence chỉ áp dụng AI cho?",
+      "answer": "Khả năng của máy tính sẽ vượt qua con người"
+    },
+    {
+      "id": 14,
+      "question": "Bài toán nào sau đây có thể sử dụng Machine Learning?",
+      "answer": "Tất cả các đáp án trên (Regression - Hồi quy, Classification - Phân loại, Clustering - Phân cụm)"
+    },
+    {
+      "id": 15,
+      "question": "Lệnh print(\"Hà Nội\", \"Việt Nam\") sẽ in ra kết quả như thế nào?",
+      "answer": "Hà Nội Việt Nam"
+    },
+    {
+      "id": 16,
+      "question": "Để viết chú thích trong Python người ta dùng ký tự nào sau đây?",
+      "answer": "Ký tự #"
+    },
+    {
+      "id": 17,
+      "question": "Giả sử có đoạn chương trình sau:\n>>> a = 5\n>>> b = 7\n>>> a,b = b,a\nKết quả của a và b là?",
+      "answer": "a = 7, b = 5"
+    },
+    {
+      "id": 18,
+      "question": "Giả sử thực hiện các lệnh sau từ cửa sổ tương tác của Python:\n>>> x = int(input(\"nhập x: \"))\nNhập x: 5.0\nKết quả x nhận giá trị nào?",
+      "answer": "Python thông báo lỗi"
+    },
+    {
+      "id": 19,
+      "question": "Giả sử thực hiện các lệnh sau từ cửa sổ tương tác của Python:\n>>> x = float(input(\"nhập x: \"))\nNhập x: 4\nKết quả x nhận giá trị nào?",
+      "answer": "4.0"
+    },
+    {
+      "id": 20,
+      "question": "Biểu thức print(-4 % 6) có kết quả như thế nào?",
+      "answer": "2"
+    },
+    {
+      "id": 21,
+      "question": "Kết quả của lệnh sau là gì?\n>>> S = \"Việt Nam\"\n>>> S[ : : -1]",
+      "answer": "\"maN tệiV\""
+    },
+    {
+      "id": 22,
+      "question": "Kết quả các lệnh sau là gì?\n>>> s = \"abcdefg\"\n>>> s[-1: 0: -1]",
+      "answer": "\"gfedcb\""
+    },
+    {
+      "id": 23,
+      "question": "Kết quả các lệnh sau là gì?\n>>> s = \"abcdefg\"\n>>> s[-1 : : -1]",
+      "answer": "\"gfedcba\""
+    },
+    {
+      "id": 24,
+      "question": "Lệnh sau cho kết quả như thế nào?\n>>> ord(\"ABC\")",
+      "answer": "Chương trình báo lỗi"
+    },
+    {
+      "id": 25,
+      "question": "Giả sử từ điển d = {1: 'Bình', 3: 'Thuận', 2: 'Quang'}\nKhi đó lệnh list(d) trả lại kết quả gì?",
+      "answer": "Dãy (list) các key của từ điển: [1, 2, 3]"
+    },
+    {
+      "id": 26,
+      "question": "Giả sử từ điển d = {1: 'Bình', 3: 'Thuận', 2: 'Quang'}\nKhi đó lệnh print(d[\"Quang\"]) trả lại kết quả gì?",
+      "answer": "Chương trình báo lỗi"
+    },
+    {
+      "id": 27,
+      "question": "Giả sử từ điển d = {1: 'Bình', 3: 'Thuận', 2: 'Quang'}\nKhi đó lệnh d.get(0) trả lại kết quả gì?",
+      "answer": "None"
+    },
+    {
+      "id": 28,
+      "question": "Đoạn chương trình sau in ra kết quả nào?\nXlist = [1, [1, 2], [1, 2, 3], [1, 2, 3, 4]]\nprint(Xlist[2] + [1])",
+      "answer": "[1, 2, 3, 1]"
+    },
+    {
+      "id": 29,
+      "question": "Lệnh list(range(-3,3)) trả lại giá trị nào?",
+      "answer": "[-3, -2, -1, 0, 1, 2]"
+    },
+    {
+      "id": 30,
+      "question": "Lệnh list(range(-3,3,3)) trả lại giá trị nào?",
+      "answer": "[-3, 0]"
+    },
+    {
+      "id": 31,
+      "question": "Lệnh list(range(-3)) trả lại giá trị nào?",
+      "answer": "[] (danh sách rỗng)"
+    },
+    {
+      "id": 32,
+      "question": "Giá trị x sau khi thực hiện lệnh sau là gì?\nx = 4 ** 2 - 4 * 4 == 0",
+      "answer": "True"
+    },
+    {
+      "id": 33,
+      "question": "Giả sử d là một biến kiểu từ điển cho trước. Khi đó lệnh:\nd[1] = \"Hà\"\nsẽ thực hiện công việc gì?",
+      "answer": "Nếu trong từ điển đã có key = 1 thì cập nhật giá trị mới, nếu chưa có thì thêm mới"
+    },
+    {
+      "id": 34,
+      "question": "Cho đoạn chương trình:\n>>> A = {0, 2, 3, 6, 9, 10, 11}\n>>> B = {0, 1, 4, 6, 7, 8, 9, 12}\n>>> C = A & B\nTập hợp C bằng bao nhiêu?",
+      "answer": "{0, 6, 9}"
+    },
+    {
+      "id": 35,
+      "question": "Cho đoạn chương trình:\n>>> A = {0, 2, 3, 6, 9, 10, 11}\n>>> B = {0, 1, 4, 6, 7, 8, 9, 12}\n>>> C = A - B\nTập hợp C bằng bao nhiêu?",
+      "answer": "{2, 3, 10, 11}"
+    },
+    {
+      "id": 36,
+      "question": "Cho đoạn chương trình:\n>>> A = {0, 2, 3, 6, 9, 10, 11}\n>>> B = {0, 1, 4, 6, 7, 8, 9, 12}\n>>> C = A ^ B\nTập hợp C bằng bao nhiêu?",
+      "answer": "{1, 2, 3, 4, 7, 8, 10, 11, 12}"
+    },
+    {
+      "id": 37,
+      "question": "Trong các lệnh dưới đây lệnh nào là sai khi thêm thư viện vào trong ứng dụng?",
+      "answer": "Tất cả phương án đều đúng (không có lệnh sai)"
+    },
+    {
+      "id": 38,
+      "question": "Để cài đặt thư viện ta dùng lệnh nào dưới đây?",
+      "answer": "Tất cả đều đúng (pip install <tên thư viện>, pip install <tên thư viện 1> <tên thư viện 2>, conda install <tên thư viện>)"
+    },
+    {
+      "id": 39,
+      "question": "Lệnh nào cài đặt thư viện bị sai?",
+      "answer": "pip install <tên thư viện 1>,<tên thư viện 2> (không dùng dấu phẩy để phân cách)"
+    },
+    {
+      "id": 40,
+      "question": "Để mở file testData.csv ta dùng lệnh nào?",
+      "answer": "df = pd.read_csv('testData.csv')"
+    },
+    {
+      "id": 41,
+      "question": "Để lưu dữ liệu vào file abc.csv ta dùng lệnh nào?",
+      "answer": "df.to_csv(\"abc.csv\")"
+    },
+    {
+      "id": 42,
+      "question": "Để xem thông tin của file .csv ta dùng lệnh nào?",
+      "answer": "df.info()"
+    },
+    {
+      "id": 43,
+      "question": "Để xem thông tin của cột Lương ta dùng lệnh nào?",
+      "answer": "df['Luong']"
+    },
+    {
+      "id": 44,
+      "question": "Để hiển thị dữ liệu theo điều kiện Lương = 10 triệu và Ngành nghề = kế toán ta thực hiện theo mẫu nào?",
+      "answer": "df[(df[\"Luong\"] == 10.0) & (df[\"NganhNghe\"] == \"KeToan\")]"
+    },
+    {
+      "id": 45,
+      "question": "Để thêm cột \"Thêm\" ta thực hiện theo mẫu nào?",
+      "answer": "df['them']=df['Luong']+10"
+    },
+    {
+      "id": 46,
+      "question": "Để cắt được tháng trong cột Order Date ta làm theo mẫu nào?",
+      "answer": "Cả 3 cách đều đúng (df['Month']=df['Order Date'].str.slice(start=0, stop=2, step=1), slice(0,2,1), slice(0,2))"
+    },
+    {
+      "id": 47,
+      "question": "Lệnh df.head(10) dùng để làm gì?",
+      "answer": "Hiển thị 10 dòng dữ liệu tính cả tiêu đề cột"
+    },
+    {
+      "id": 48,
+      "question": "Để tạo thêm cột \"dieukien\" với điều kiện Lương = 26 thì hiển thị \"khá\", ngược lại là \"không\" ta dùng câu lệnh nào?",
+      "answer": "df['dieukien']=np.where(df['Luong']==26,\"khá\",\"không\")"
+    },
+    {
+      "id": 49,
+      "question": "Để xóa hoàn toàn cột thêm trong dataset ta dùng lệnh nào?",
+      "answer": "df.drop(columns=['them'], inplace=True)"
+    },
+    {
+      "id": 50,
+      "question": "Để xóa hoàn toàn hàng 2, 3 và 4 trong dataset ta dùng lệnh nào?",
+      "answer": "df = df.drop(index=[2,3,4])"
+    },
+    {
+      "id": 51,
+      "question": "Để sắp xếp cột Lương theo chiều tăng dần ta dùng lệnh nào?",
+      "answer": "df.sort_values(by=['Luong'], ascending=True)"
+    },
+    {
+      "id": 52,
+      "question": "Để nhóm cột Ngành nghề và hiển thị số lượng bản ghi ta dùng lệnh nào?",
+      "answer": "df = df.groupby('NganhNghe').size()"
+    },
+    {
+      "id": 53,
+      "question": "Python có 5 kiểu dữ liệu chuẩn là?",
+      "answer": "Number, String, List, Tuple, Dictionary"
+    },
+    {
+      "id": 54,
+      "question": "Kiểu String là gì?",
+      "answer": "Một trong các kiểu phổ biến nhất trong Python dùng để lưu trữ chuỗi ký tự"
+    },
+    {
+      "id": 55,
+      "question": "Kiểu List là gì?",
+      "answer": "Lưu trữ dữ liệu dạng danh sách, được bao xung quanh bởi dấu ngoặc vuông []"
+    },
+    {
+      "id": 56,
+      "question": "Kiểu Tuple là gì?",
+      "answer": "Lưu trữ dữ liệu dạng danh sách tương tự List nhưng sử dụng ngoặc đơn ()"
+    },
+    {
+      "id": 57,
+      "question": "Python hỗ trợ 4 kiểu dữ liệu số là?",
+      "answer": "int, long, float, số phức"
+    },
+    {
+      "id": 58,
+      "question": "Để ép kiểu dữ liệu số thực trong Python ta sử dụng cú pháp nào?",
+      "answer": "i = float(input(\"Nhập giá trị đầu vào: \"))"
+    },
+    {
+      "id": 59,
+      "question": "Đoạn code sau cho kết quả là gì?\nfor i in range(10): print(i, end=\" \")",
+      "answer": "In ra các số từ 0 đến 9 theo hàng"
+    },
+    {
+      "id": 60,
+      "question": "Đoạn code sau thực hiện công việc gì?\ndef square(x): return x ** 2\nprint(square(4))",
+      "answer": "Tính giá trị bình phương của 4 (kết quả là 16)"
+    },
+    {
+      "id": 61,
+      "question": "Đoạn code sau cho kết quả là gì?\nfor i in range(10,0,-1): print(i, end=\" \")",
+      "answer": "10,9,8,7,6,5,4,3,2,1"
+    },
+    {
+      "id": 62,
+      "question": "Hàm Dictionary.get() dùng để làm gì?",
+      "answer": "Lấy một phần tử (giá trị) trong Dictionary theo key"
+    },
+    {
+      "id": 63,
+      "question": "Hàm List.append() dùng để làm gì?",
+      "answer": "Thêm một phần tử vào vị trí cuối cùng của List hiện tại"
+    },
+    {
+      "id": 64,
+      "question": "Tính chất cơ bản của OOP (Object-Oriented Programing) là gì?",
+      "answer": "Kế thừa, đóng gói, trừu tượng, đa hình"
+    },
+    {
+      "id": 65,
+      "question": "Constructor được sử dụng để tạo ra?",
+      "answer": "Một đối tượng"
+    },
+    {
+      "id": 66,
+      "question": "Một class có mấy phương thức khởi tạo?",
+      "answer": "1"
+    },
+    {
+      "id": 67,
+      "question": "Nếu class không được định nghĩa constructor, Python mặc định hiểu constructor là?",
+      "answer": "__init__(self)"
+    },
+    {
+      "id": 68,
+      "question": "Biến __name thuộc phạm vi nào?",
+      "answer": "Private"
+    },
+    {
+      "id": 69,
+      "question": "Kết quả của chương trình sau là gì?\nclass A:\n    def __init__(self):\n        self.x = 1\n        self.y = 1\ndef test():\n    a = A()\n    return a.x + a.y\nprint(test())",
+      "answer": "2"
+    },
+    {
+      "id": 70,
+      "question": "Khẳng định nào đúng khi __b là thuộc tính trong class?",
+      "answer": "__b là thuộc tính private, không thể truy cập từ bên ngoài lớp"
+    },
+    {
+      "id": 71,
+      "question": "Đoạn lệnh sau cho kết quả là gì?\nD = {1: \"one\", 2: \"two\"}\nD.clear()\nprint('D =', D)",
+      "answer": "D = {}"
+    },
+    {
+      "id": 72,
+      "question": "Đoạn code sau cho kết quả là bao nhiêu?\nn = [5.5, 3, 4, -5]\nnSum = sum(n, 10)\nprint(nSum)",
+      "answer": "17.5"
+    },
+    {
+      "id": 73,
+      "question": "Đoạn code sau lỗi ở dòng nào?\n1. person = { 'name': 'Phil', 'age': 32}\n2. print('Name: ', person.get('name'))\n3. print('Age: ', person.get('age'))\n4. print('Salary: ', person.get('salary', 10.000.000))",
+      "answer": "Dòng 4 (10.000.000 không hợp lệ, dùng 10000000 hoặc 10000000.0)"
+    },
+    {
+      "id": 74,
+      "question": "Đoạn code sau cho kết quả là gì?\nL = ['freetuts', 'dot', 'net']\nL.append('Python admin')\nprint('Updated list: ', L)",
+      "answer": "['freetuts', 'dot', 'net', 'Python admin']"
+    },
+    {
+      "id": 75,
+      "question": "Đoạn chương trình sau cho kết quả là gì?\nL = {'C++', 'PYTHON', 'PHP', 'JAVA'}\nL.add('PYTHON')\nprint('Ket qua:', L)",
+      "answer": "{'PYTHON', 'JAVA', 'PHP', 'C++'}"
+    },
+    {
+      "id": 76,
+      "question": "Đoạn code sau thực hiện công việc gì?\ndef ChuanHoa(s):\n    a = s.strip()\n    b = \" \".join(a.split())\n    return b",
+      "answer": "Xóa các kí tự trống thừa trong xâu văn bản"
+    },
+    {
+      "id": 77,
+      "question": "Với n = 20, đoạn chương trình sau cho kết quả là bao nhiêu?\ns = 0\nfor i in range(2, n, 2):\n    s += i\nprint(s)",
+      "answer": "90"
+    },
+    {
+      "id": 78,
+      "question": "Trong các lệnh dưới đây lệnh nào là đúng khi thêm thư viện vào trong ứng dụng?",
+      "answer": "import pandas as pd"
+    },
+    {
+      "id": 79,
+      "question": "Để khởi tạo đối tượng teacher1 trong lớp Teacher ta dùng cú pháp lệnh nào?",
+      "answer": "teacher1 = Teacher()"
+    },
+    {
+      "id": 80,
+      "question": "Khi sử dụng pandas, muốn hiển thị dữ liệu của 5 dòng đầu tiên của đối tượng df ta dùng lệnh nào?",
+      "answer": "df.head(5)"
+    },
+    {
+      "id": 81,
+      "question": "Khi sử dụng pandas, muốn hiển thị dữ liệu từ dòng có index 5 đến dòng có index 10 của đối tượng df ta dùng lệnh nào?",
+      "answer": "df.iloc[5:10]"
+    },
+    {
+      "id": 82,
+      "question": "Khi sử dụng pandas, muốn hiển thị dữ liệu 2 cột Ngành và Điểm của đối tượng df ta dùng lệnh nào?",
+      "answer": "df[['Ngành','Diem']]"
+    },
+    {
+      "id": 83,
+      "question": "Khi sử dụng pandas, muốn sắp xếp dữ liệu theo 2 cột Ngành và Điểm của đối tượng df ta dùng lệnh nào?",
+      "answer": "df.sort_values(by=['Ngành','Diem'])"
+    },
+    {
+      "id": 84,
+      "question": "Khi sử dụng pandas, muốn thêm một dòng dữ liệu vào đối tượng df ta dùng lệnh nào?",
+      "answer": "df.append(['Ten':'HUBT'])"
+    },
+    {
+      "id": 85,
+      "question": "Khi sử dụng pandas, muốn xóa các dòng có giá trị bằng 17 của đối tượng df ta dùng lệnh nào?",
+      "answer": "df.drop(index=17)"
+    },
+    {
+      "id": 86,
+      "question": "Khi sử dụng matplotlib để vẽ biểu đồ histogram ta dùng lệnh nào?",
+      "answer": "plt.hist(dataset['Luong'], 20)"
+    },
+    {
+      "id": 87,
+      "question": "Đâu là kết quả của đoạn code sau?\nclass A:\n    def __init__(self):\n        self.x = 1\n        self.y = 1\nobj = A()\nprint(obj.x, obj.y)",
+      "answer": "1 1"
+    },
+    {
+      "id": 88,
+      "question": "Đâu là kết quả cho đoạn code sau?\nclass Test:\n    def __init__(self):\n        self.a = \"Python\"\n    def __init__(self):\n        self.a = \"Java\"\nt = Test()\nprint(t.a)",
+      "answer": "Java"
+    },
+    {
+      "id": 89,
+      "question": "Ý nghĩa của hàm __init__() trong Python là gì?",
+      "answer": "Được gọi khi một đối tượng mới được khởi tạo"
+    },
+    {
+      "id": 90,
+      "question": "Đâu là kết quả cho đoạn code sau?\nclass A:\n    a = 10\n    def __init__(self):\n        self.a = 20\nobj = A()\nobj.a = 30\nprint(obj.a)",
+      "answer": "30"
+    },
+    {
+      "id": 91,
+      "question": "Khẳng định nào là đúng khi nói về đoạn code sau?\ndef printHello():\n    print(\"Hello\")\na = printHello",
+      "answer": "printHello() và a là hai đối tượng khác nhau (a tham chiếu đến hàm)"
+    },
+    {
+      "id": 92,
+      "question": "Đoạn code nào sau đây sử dụng tính năng kế thừa của Python?",
+      "answer": "class Hoo(Foo): pass (class con kế thừa class Foo)"
+    },
+    {
+      "id": 93,
+      "question": "Đâu là yếu tố được gọi ra khi hàm được khai báo trong một lớp class?",
+      "answer": "Method"
+    },
+    {
+      "id": 94,
+      "question": "Đâu là phương thức thành viên trong Python?",
+      "answer": "def print(self): (các phương thức thông thường)"
+    },
+    {
+      "id": 95,
+      "question": "Đâu là phương thức hủy trong Python?",
+      "answer": "def __del__(self):"
+    },
+    {
+      "id": 96,
+      "question": "Đâu là kết quả cho đoạn code sau?\nclass Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\nt1 = Person(\"Nguyen Van A\", 40)\nprint(t1.name)\nprint(t1.age)",
+      "answer": "Nguyen Van A\n40"
+    },
+    {
+      "id": 97,
+      "question": "Đâu là kết quả cho đoạn code sau?\nclass A:\n    def __init__(self):\n        print(\"Ham khoi tao lop cha\")\nclass B(A):\n    def __init__(self):\n        print(\"Ham khoi tao lop con\")\nobj = B()",
+      "answer": "Ham khoi tao lop con (constructor lớp con được gọi)"
+    },
+    {
+      "id": 98,
+      "question": "Đâu là kết quả cho đoạn code sau?\nclass A:\n    def __init__(self):\n        print(\"Ham khoi tao lop cha\")\nclass B(A):\n    def __init__(self):\n        super().__init__()\n        print(\"Ham khoi tao lop con\")\nobj = B()",
+      "answer": "Cả 2 đáp án đều đúng (in ra cả Ham khoi tao lop cha và Ham khoi tao lop con)"
+    },
+    {
+      "id": 99,
+      "question": "Đâu là kết quả cho đoạn code sau?\nclass A:\n    def __init__(self):\n        self.a = 5\n    def test(self):\n        if self.a > 0:\n            return True\n        else:\n            return False\nobj = A()\nprint(obj.test())",
+      "answer": "True"
+    },
+    {
+      "id": 100,
+      "question": "Một công ty triển khai AI xét duyệt vay vốn. Hệ thống đạt độ chính xác cao hơn nhân viên nhưng từ chối nhiều hồ sơ ở khu vực thu nhập thấp. Ban giám đốc cho rằng 'AI không phân biệt ai cả vì chỉ học từ dữ liệu'. Nhận định nào hợp lý nhất?",
+      "answer": "Nếu dữ liệu quá khứ có thiên lệch, AI có thể tái tạo bất công ở quy mô lớn hơn"
+    },
+    {
+      "id": 101,
+      "question": "Đoạn code sau có lỗi ở dòng nào?\n1. person = { 'name': 'Phil', 'age': 32}\n2. print('Name: ', person.get('name'))\n3. print('Age: ', person.get('age'))\n4. print('Salary: ', person.get('salary', 10.000.000))",
+      "answer": "Dòng 4 (lỗi cú pháp do dùng dấu phẩy trong số 10.000.000)"
+    }
+  ]
+}
