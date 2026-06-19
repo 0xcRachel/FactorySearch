@@ -27,6 +27,23 @@ export class JsonDriver implements DatabaseDriver {
 
     this.emitProgress(10, 'Đang tải dữ liệu từ các file JSON...');
     try {
+      // If there is a cached JSON import in localStorage and version matches,
+      // load it first so imported questions persist across reloads.
+      try {
+        const cachedVersion = localStorage.getItem(CACHE_VERSION_KEY);
+        const cached = localStorage.getItem(CACHE_KEY);
+        if (cached && cachedVersion === CURRENT_VERSION) {
+          const parsed = JSON.parse(cached) as Question[];
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            this.questions = parsed;
+            this.loaded = true;
+            this.emitProgress(100, `Đã tải ${this.questions.length} câu hỏi từ cache!`);
+            return;
+          }
+        }
+      } catch (e) {
+        console.warn('[JsonDriver] Failed to read cache, falling back to bundled JSON', e);
+      }
       // Automatically load all JSON files from QuestionJSON directory
       const jsonModules = import.meta.glob('../../QuestionJSON/*.json', { eager: true });
       let allQuestions: Question[] = [];
