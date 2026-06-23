@@ -1,0 +1,749 @@
+{
+  "CSDL": [
+    {
+      "id": 1,
+      "question": "Lệnh nào hiển thị tất cả sinh viên?",
+      "answer": "db.SinhVien.find()"
+    },
+    {
+      "id": 2,
+      "question": "Lệnh nào tìm sinh viên có mã SV001?",
+      "answer": "db.SinhVien.find({MaSV:\"SV001\"})"
+    },
+    {
+      "id": 3,
+      "question": "Lệnh tìm sinh viên lớp CNTT01?",
+      "answer": "db.SinhVien.find({Lop:\"CNTT01\"})"
+    },
+    {
+      "id": 4,
+      "question": "Toán tử tìm sinh viên có ĐiểmTB > 8 là:",
+      "answer": "$gt"
+    },
+    {
+      "id": 5,
+      "question": "Kết quả của lệnh là: db.SinhVien.find({DiemTB:{$gt:8}})",
+      "answer": "ĐiểmTB > 8"
+    },
+    {
+      "id": 6,
+      "question": "Toán tử tìm ĐiểmTB ≥ 7?",
+      "answer": "$gte"
+    },
+    {
+      "id": 7,
+      "question": "Toán tử tìm ĐiểmTB ≤ 5?",
+      "answer": "$lte"
+    },
+    {
+      "id": 8,
+      "question": "Lệnh tìm sinh viên nữ: db.SinhVien.find({GioiTinh:\"Nu\"}) sử dụng điều kiện trên trường:",
+      "answer": "GioiTinh"
+    },
+    {
+      "id": 9,
+      "question": "Lệnh: db.SinhVien.find({DiemTB:{$ne:8}}) có nghĩa:",
+      "answer": "ĐiểmTB khác 8"
+    },
+    {
+      "id": 10,
+      "question": "Toán tử OR trong MongoDB là:",
+      "answer": "$or"
+    },
+    {
+      "id": 11,
+      "question": "Lệnh: db.SinhVien.find({$or:[{Lop:\"CNTT01\"},{Lop:\"CNTT02\"}]}) sẽ:",
+      "answer": "Tìm CNTT01 và CNTT02"
+    },
+    {
+      "id": 12,
+      "question": "Lệnh sắp xếp tăng dần theo ĐiểmTB:",
+      "answer": "sort({DiemTB:1})"
+    },
+    {
+      "id": 13,
+      "question": "Sắp xếp giảm dần theo ĐiểmTB:",
+      "answer": "sort({DiemTB:-1})"
+    },
+    {
+      "id": 14,
+      "question": "Lệnh chỉ lấy 5 sinh viên đầu: db.SinhVien.find().limit(5). Phương thức được dùng là:",
+      "answer": "limit()"
+    },
+    {
+      "id": 15,
+      "question": "Lệnh bỏ qua 10 bản ghi đầu:",
+      "answer": "skip(10)"
+    },
+    {
+      "id": 16,
+      "question": "Thêm một sinh viên dùng lệnh:",
+      "answer": "insertOne()"
+    },
+    {
+      "id": 17,
+      "question": "Thêm nhiều sinh viên dùng:",
+      "answer": "insertMany()"
+    },
+    {
+      "id": 18,
+      "question": "Lệnh nào đúng? db.SinhVien.insertOne({MaSV:\"SV100\", HoTen:\"Tran Van B\"})",
+      "answer": "Thêm dữ liệu"
+    },
+    {
+      "id": 19,
+      "question": "MongoDB tự tạo trường:",
+      "answer": "_id"
+    },
+    {
+      "id": 20,
+      "question": "Lệnh đếm số sinh viên:",
+      "answer": "countDocuments()"
+    },
+    {
+      "id": 21,
+      "question": "Lệnh cập nhật một sinh viên:",
+      "answer": "updateOne()"
+    },
+    {
+      "id": 22,
+      "question": "Toán tử cập nhật giá trị:",
+      "answer": "$set"
+    },
+    {
+      "id": 23,
+      "question": "Kết quả lệnh: db.SinhVien.updateOne({MaSV:\"SV001\"}, {$set:{DiemTB:9}})",
+      "answer": "ĐiểmTB thành 9"
+    },
+    {
+      "id": 24,
+      "question": "Cập nhật nhiều sinh viên dùng:",
+      "answer": "updateMany()"
+    },
+    {
+      "id": 25,
+      "question": "Toán tử tăng điểm thêm 1:",
+      "answer": "$inc"
+    },
+    {
+      "id": 26,
+      "question": "Lệnh: {$inc:{DiemTB:1}} nghĩa là:",
+      "answer": "Tăng 1"
+    },
+    {
+      "id": 27,
+      "question": "Thay thế toàn bộ document:",
+      "answer": "replaceOne()"
+    },
+    {
+      "id": 28,
+      "question": "Xóa một sinh viên:",
+      "answer": "deleteOne()"
+    },
+    {
+      "id": 29,
+      "question": "Xóa nhiều sinh viên:",
+      "answer": "deleteMany()"
+    },
+    {
+      "id": 30,
+      "question": "Lệnh: db.SinhVien.deleteOne({MaSV:\"SV001\"}) sẽ:",
+      "answer": "Xóa SV001"
+    },
+    {
+      "id": 31,
+      "question": "Lệnh thống kê sử dụng:",
+      "answer": "aggregate()"
+    },
+    {
+      "id": 32,
+      "question": "Giai đoạn lọc dữ liệu trong Aggregation:",
+      "answer": "$match"
+    },
+    {
+      "id": 33,
+      "question": "Giai đoạn nhóm dữ liệu:",
+      "answer": "$group"
+    },
+    {
+      "id": 34,
+      "question": "Lệnh tạo Index cho trường MaSV: db.SinhVien.createIndex({MaSV:1}). Mục đích:",
+      "answer": "Tăng tốc truy vấn"
+    },
+    {
+      "id": 35,
+      "question": "Lệnh xem các Index:",
+      "answer": "getIndexes()"
+    },
+    {
+      "id": 36,
+      "question": "Lệnh tạo cơ sở dữ liệu trong MongoDB là?",
+      "answer": "use <DBNAME>"
+    },
+    {
+      "id": 37,
+      "question": "Sử dụng csdl hiện hành?",
+      "answer": "use <DBNAME>"
+    },
+    {
+      "id": 38,
+      "question": "Hiển thị danh sách các CSDL?",
+      "answer": ">show dbs"
+    },
+    {
+      "id": 39,
+      "question": "Xóa CSDL",
+      "answer": "db.dropDatabase()"
+    },
+    {
+      "id": 40,
+      "question": "Cú pháp tạo bộ sưu tập?",
+      "answer": "db.createCollection(name, options)"
+    },
+    {
+      "id": 41,
+      "question": "Cú pháp xóa Collection?",
+      "answer": "db.COLLECTION_NAME.drop()"
+    },
+    {
+      "id": 42,
+      "question": "Cú pháp thêm tài liệu vào bộ sưu tập?",
+      "answer": "db.COLLECTION_NAME.insert(document)"
+    },
+    {
+      "id": 43,
+      "question": "Lệnh nào dùng để lấy tất cả dữ liệu trong collection SinhVien của MongoDB?",
+      "answer": "db.SinhVien.find()"
+    },
+    {
+      "id": 44,
+      "question": "Trong MongoDB có collection SinhVien với trường tên sinh viên là TenSV, thì câu lệnh hiển thị thông tin sinh viên theo thứ tự tăng dần của tên sinh viên là:",
+      "answer": "db.SinhVien.find().sort({ TenSV: 1 })"
+    },
+    {
+      "id": 45,
+      "question": "Trong MongoDB, để xóa thông tin sinh viên có mã sinh viên SV001 trong collection SinhVien, sử dụng lệnh:",
+      "answer": "db.SinhVien.deleteOne({ MaSV: \"SV001\" })"
+    },
+    {
+      "id": 46,
+      "question": "Trong MongoDB, để xóa toàn bộ collection SinhVien sử dụng lệnh:",
+      "answer": "db.SinhVien.drop()"
+    },
+    {
+      "id": 47,
+      "question": "Trong MongoDB, lấy thông tin sinh viên có điểm cao nhất trong collection Ketqua ?",
+      "answer": "db.KetQua.find().sort({ Diem: -1 }).limit(1)"
+    },
+    {
+      "id": 48,
+      "question": "NoSQL là ?",
+      "answer": "Là hệ quản trị cơ sở dữ liệu phi quan hệ, lưu dữ liệu linh hoạt dưới dạng document, key-value, graph hoặc column-family."
+    },
+    {
+      "id": 49,
+      "question": "Hệ quản trị cơ sở dữ liệu nào sau đây thuộc nhóm NoSQL?",
+      "answer": "MongoDB"
+    },
+    {
+      "id": 50,
+      "question": "Tạo cấu trúc bảng trong SQL có 3 thành phần: Column Name, Data Type, Allow Nulls. Allow Nulls có tác dụng gì?",
+      "answer": "Ràng buộc người dùng bắt buộc nhập dữ liệu cho cột tương ứng hoặc không."
+    },
+    {
+      "id": 51,
+      "question": "Tạo cấu trúc bảng trong SQL, nếu tại Data Type của cột tương ứng người dùng chọn kiểu ''Datetime'' thì dữ liệu của cột đó nhận giá trị dạng thế nào?",
+      "answer": "Thời gian (mm/dd/yyyy:hh:mm:ss)."
+    },
+    {
+      "id": 52,
+      "question": "Anh (Chị) hãy nêu cú pháp câu lệnh chọn (hiển thị) dữ liệu?",
+      "answer": "SELECT [*| distinct] [top n] <danh sách thông tin cần hiển thị> [into <tên bảng mới> FROM <tên các bảng và điều kiện liên kết> WHERE < biểu thức điều kiện và điều kiện liên kết> GROUP BY <cột cần nhóm> HAVING <biểu thức điều kiện nhóm> ORDER BY <các cột cần sắp xếp> [asc/ desc]"
+    },
+    {
+      "id": 53,
+      "question": "Tạo cấu trúc bảng trong SQL có 3 thành phần: Column Name, Data Type, Allow Nulls. Hãy nêu tác dụng của Data Type?",
+      "answer": "Chọn kiểu dữ liệu cho cột tương ứng."
+    },
+    {
+      "id": 54,
+      "question": "Hãy nêu cấu trúc lời gọi Store Procedure?",
+      "answer": "exec <tên Store Procedure > [<danh sách các tham số>]"
+    },
+    {
+      "id": 55,
+      "question": "Inner Join là kiểu liên kết gì?",
+      "answer": "Liên kết trong."
+    },
+    {
+      "id": 56,
+      "question": "Trong Cú pháp câu lệnh ràng buộc Forein Key, từ khoá On Update có nghĩa là gì?",
+      "answer": "Áp dụng câu lệnh cho thao tác cập nhật dữ liệu."
+    },
+    {
+      "id": 57,
+      "question": "Anh (Chị) hãy nêu cú pháp câu lệnh xoá thủ tục?",
+      "answer": "drop procedure <tên thủ tục>"
+    },
+    {
+      "id": 58,
+      "question": "Anh (Chị) hãy nêu cú pháp câu lệnh khai báo tham số?",
+      "answer": "declare @<tên tham số> < kiểu dữ liệu>"
+    },
+    {
+      "id": 59,
+      "question": "Anh (Chị) hãy nêu cú pháp câu lệnh thêm một cột vào bảng trong SQL?",
+      "answer": "Alter table <Tên bảng cần sửa> Add <tên cột mới> <kiểu dữ liệu> [ràng buộc]"
+    },
+    {
+      "id": 60,
+      "question": "Trong khai báo thủ tục, thân thủ tục chính bắt đầu sau từ khoá nào?",
+      "answer": "as"
+    },
+    {
+      "id": 61,
+      "question": "Khi tạo cấu trúc bảng trong SQL, nếu tại Data Type của cột tương ứng người dùng chọn kiểu ''Nchar(n)'' thì dữ liệu của cột đó nhận giá trị ở dạng nào?",
+      "answer": "Chuỗi với độ dài chính xác hỗ trợ Unicode."
+    },
+    {
+      "id": 62,
+      "question": "Cú pháp câu lệnh khai báo biến:",
+      "answer": "declare @<tên biến> <kiểu dữ liệu>"
+    },
+    {
+      "id": 63,
+      "question": "Tạo cấu trúc bảng trong SQL, nếu tại mục Data Type của cột tương ứng người dùng chọn kiểu ''Nvarchar(50)'' thì dữ liệu của cột đó nhận giá trị ở dạng nào?",
+      "answer": "Chuỗi với độ dài cố định hỗ trợ Unicode."
+    },
+    {
+      "id": 64,
+      "question": "Anh (Chị) hãy nêu cú pháp câu lệnh sửa thủ tục?",
+      "answer": "alter procedure <tên thủ tục> [<danh sách các tham số><kiểu dữ liệu>]"
+    },
+    {
+      "id": 65,
+      "question": "Anh (Chị) hãy nêu cú pháp câu lệnh tạo cấu trúc bảng trong SQL?",
+      "answer": "Creat Table <tên bảng> ( <danh sách các cột > <kiểu dữ liệu> [<ràng buộc>])"
+    },
+    {
+      "id": 66,
+      "question": "Anh (Chị) hãy nêu cú pháp câu lệnh ràng buộc Check?",
+      "answer": "CONSTRAINT tên ràng buộc CHECK (điều kiện)"
+    },
+    {
+      "id": 67,
+      "question": "Anh (Chị) hãy nêu cú pháp câu lệnh nhập dữ liệu trong SQL?",
+      "answer": "INSERT INTO <tên bảng> VALUES (<các giá trị ứng với các thuộc tính>)"
+    },
+    {
+      "id": 68,
+      "question": "Anh (Chị) hãy nêu cú pháp câu lệnh sửa cấu trúc bảng trong SQL?",
+      "answer": "Alter Table <tên bảng> ( <danh sách các cột cần sửa> <kiểu dữ liệu> [<ràng buộc>]"
+    },
+    {
+      "id": 69,
+      "question": "Anh (Chị) hãy nêu cú pháp câu lệnh cập nhật (hoặc sửa) dữ liệu?",
+      "answer": "UPDATE <tên bảng> SET <thuộc tính cần cập nhật> = <giá trị cập nhật> FROM <tên các bảng> WHERE <biểu thức điều kiện>"
+    },
+    {
+      "id": 70,
+      "question": "Anh (Chị) hãy nêu cấu trúc khai báo một store procedure?",
+      "answer": "create procedure <tên thủ tục> [<danh sách các tham số><kiểu dữ liệu tương ứng>] as <thân thủ tục>"
+    },
+    {
+      "id": 71,
+      "question": "Trong Cú pháp câu lệnh ràng buộc Forein Key, từ khoá No Action có nghĩa là gì?",
+      "answer": "Nếu bản ghi trong bảng tham chiếu đang được tham chiếu bởi một bản ghi bất kỳ trong bảng được định nghĩa thì bản ghi đó không được phép xoá hoặc cập nhật (đối với cột được tham chiếu)."
+    },
+    {
+      "id": 72,
+      "question": "Anh (Chị) hãy nêu cú pháp đầy đủ của câu lệnh ràng buộc Primary Key?",
+      "answer": "[CONSTRAINT tên ràng buộc] PRIMARY KEY [(danh sách cột)]"
+    },
+    {
+      "id": 73,
+      "question": "Anh (Chị) hãy nêu cú pháp tạo khung nhìn View?",
+      "answer": "create view <tên khung nhìn> [(danh sách các cột)] as Câu lệnh select"
+    },
+    {
+      "id": 74,
+      "question": "Ta sử dụng từ khoá GROUP BY trong câu lệnh select khi nào?",
+      "answer": "Khi ta muốn hiển thị dữ liệu theo nhóm."
+    },
+    {
+      "id": 75,
+      "question": "Trong câu lệnh chọn dữ liệu, sau từ khoá ''From '' sẽ là gì?",
+      "answer": "Danh sách bảng chứa các cột được sử dụng trong câu lệnh select."
+    },
+    {
+      "id": 76,
+      "question": "Trong một bảng, một cột có thể chứa nhiều giá trị giống nhau, và đôi khi bạn chỉ muốn liệt kê các giá trị khác nhau (khác biệt). Ta phải dùng cú pháp gì?",
+      "answer": "SELECT DISTINCT cột truy vấn FROM bảng truy vấn"
+    },
+    {
+      "id": 77,
+      "question": "Để hiển thị bảng theo thứ tự giảm dần của cột ''TongDiem'', trong câu lệnh select ta sử dụng lệnh gì?",
+      "answer": "order by TongDiem Desc"
+    },
+    {
+      "id": 78,
+      "question": "Câu lệnh nào sau đây dùng để tạo bảng?",
+      "answer": "Create table <tên bảng> (<tên cột 1> <loại cột> <thuộc tính>, ... <tên cột n> <loại cột> <thuộc tính>, Primary key(<tên cột được chọn làm khoá>) )"
+    },
+    {
+      "id": 79,
+      "question": "Hàm kiểu Scalar là gì?",
+      "answer": "Là hàm mà kết quả trả về một giá trị."
+    },
+    {
+      "id": 80,
+      "question": "Trong câu lệnh hiển thị dữ liệu Select, từ khoá ''INTO <tên bảng>'' có tác dụng gì?",
+      "answer": "Tạo bảng mới là kết quả của lệnh select."
+    },
+    {
+      "id": 81,
+      "question": "Anh (Chị) hãy nêu cú pháp cấu trúc câu lệnh Case trong SQL?",
+      "answer": "case when <điều kiện i> then <kết quả thứ i> .... Else <kết quả thứ n+1> end"
+    },
+    {
+      "id": 82,
+      "question": "Mệnh đề WHERE có tác dụng gì?",
+      "answer": "Trích xuất chỉ những thông tin thỏa điều kiện cụ thể."
+    },
+    {
+      "id": 83,
+      "question": "Trong câu lệnh chọn dữ liệu, sau từ khoá ''Having '' có tác dụng gì?",
+      "answer": "Biểu thức điều kiện của nhóm."
+    },
+    {
+      "id": 84,
+      "question": "Câu lệnh nào sau đây giúp lấy dữ liệu của các cột bên trong bảng đồng thời sắp xếp theo thứ tự tăng dần?",
+      "answer": "SELECT...FROM...ORDER BY...[ASC,...]"
+    },
+    {
+      "id": 85,
+      "question": "Trường hợp nào ta cần sử dụng cấu trúc lệnh SELECT lồng nhau?",
+      "answer": "Khi giá trị điều kiện sau mệnh đề Where chưa xác định."
+    },
+    {
+      "id": 86,
+      "question": "Anh (Chị) hãy cho biết cú pháp câu lệnh tạo trigger?",
+      "answer": "create trigger <tên trigger> on <tên_bảng> for {[insert][,][update][,][delete]} as các câu lệnh của trigger"
+    },
+    {
+      "id": 87,
+      "question": "Người dùng thường tạo Trigger cấm nhập dữ liệu áp dụng cho đối tượng nào?",
+      "answer": "Bảng cha."
+    },
+    {
+      "id": 88,
+      "question": "Người dùng thường tạo Trigger cấm xóa dữ liệu áp dụng cho đối tượng nào?",
+      "answer": "Bảng con."
+    },
+    {
+      "id": 89,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: DiemKhoiA(SoBaoDanh Nvarchar(50), DiemToan Float, DiemLy Float, DiemHoa Float, DiemUuTien Float, TongDiem Float, KetQua Nvarchar(50)). Anh (Chị) hãy cho biết câu lệnh hiển thị thông tin người có tổng điểm cao nhất?",
+      "answer": "SELECT * FROM DiemKhoiA WHERE TongDiem=max(TongDiem)"
+    },
+    {
+      "id": 90,
+      "question": "Cho biết đoạn mã sau thực hiện công việc gì? SELECT HoaDonBanHangID, NgayLapHoaDon , DmNhanVienREF, DmKhachHangREF, TongTienBan FROM HoaDonBanHang INNER JOIN DmKhachHang ON HoaDonBanHang. DmKhachHangREF = DmKhachHang. DmKhachHangID WHERE HoTenKhachHang = N'Phạm Thu Vân' AND YEAR(NgayLapHoaDon)=2011",
+      "answer": "Hiển thị thông tin của những hoá đơn bán cho khách hàng ''Phạm Thu Vân'' trong năm 2011."
+    },
+    {
+      "id": 91,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang''có bảng: HoaDonBanHangChiTiet( HoaDonBanHangChiTietID Nvarchar(50), HoaDonBanHangFK Nvarchar(50), DmTenKhachHangREF Nvarchar(50), DmHangHoaREF Nvarchar(50), SoLuongBan Int, DonGiaBan Bigint, ThanhTienBan Bigint) Hãy cho biết thông tin những mặt hàng bán được từ 10 sản phẩm trở lên?",
+      "answer": "SELECT * FROM HoaDonBanHangChiTiet WHERE SoLuongBan>=10"
+    },
+    {
+      "id": 92,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: HoSoThiSinh(SoBaoDanh Nvarchar(50), HoDem Nvarchar(50), Ten Nvarchar(50), NgaySinh Datetime, KhuVuc Nvarchar(50), DoiTuong Nvarchar(50), KhoiThi Nvarchar(50), DiaChi Nvarchar(400), NguyenVong1 Nvarchar(200), NguyenVong2 Nvarchar(200)) đã được nhập dữ liệu. Hãy viết câu lệnh cho biết thông tin những thí sinh có cùng họ tên là ''Trần Bình Minh''?",
+      "answer": "SELECT * FROM HoSoThiSinh WHERE HoDem = N'Trần Bình' and Ten = N'Minh'"
+    },
+    {
+      "id": 93,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang'' có bảng: HoaDonBanHang( HoaDonBanHangID Nvarchar(50), NgayLapHoaDon Datetime, DmNhanVienREF Nvarchar(50), DmKhachHangREF Nvarchar(50), TongTienBan Bigint) Hãy cho biết thông tin hoá đơn bán trong ngày 20/3/2011?",
+      "answer": "SELECT * FROM HoaDonBanHang WHERE NgayLapHoaDon='2011/3/20'"
+    },
+    {
+      "id": 94,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: HoSoThiSinh(SoBaoDanh Nvarchar(50), HoDem Nvarchar(50), Ten Nvarchar(50), NgaySinh Datetime, KhuVuc Nvarchar(50), DoiTuong Nvarchar(50), KhoiThi Nvarchar(50), DiaChi Nvarchar(400), NguyenVong1 Nvarchar(200), NguyenVong2 Nvarchar(200)) đã được nhập dữ liệu. Hãy viết câu lệnh tính số lượng thí sinh thi khối A?",
+      "answer": "SELECT count(*) FROM HoSoThiSinh WHERE KhoiThi= 'A'"
+    },
+    {
+      "id": 95,
+      "question": "Trong câu lệnh hiển thị dữ liệu Select, từ khoá ''Top n'' có tác dụng gì?",
+      "answer": "Hiển thị n bản ghi đầu tiên trong bảng."
+    },
+    {
+      "id": 96,
+      "question": "Trong câu lệnh hiển thị dữ liệu Select, từ khoá ''INTO <tên bảng>'' có tác dụng gì?",
+      "answer": "Tạo bảng mới là kết quả của lệnh select."
+    },
+    {
+      "id": 97,
+      "question": "trong câu lệnh chọn dữ liệu, sau từ khoá ''Having '' sẽ là gì?",
+      "answer": "Biểu thức điều kiện của nhóm"
+    },
+    {
+      "id": 98,
+      "question": "Các phép toán gộp nhóm được sử dụng sau mệnh đề nào?",
+      "answer": "GROUP BY"
+    },
+    {
+      "id": 99,
+      "question": "Cơ sở dữ liệu ''QuanLyBanHang''có bảng dưới đây, giả sử các cột trong bảng đều có kiểu dữ liệu Nvarchar(50). Câu lệnh đúng để xoá khách hàng có mã khách hàng ''KH05'' được viết thế nào? DmKhachHang(DmKhachHangID, HoTenKhachHang, DiaChiKhachHang, DienThoaiKhachHang, EmailKhachHang, MaSoThueKhachHang,TaiKhoanKhachHang).",
+      "answer": "DELETE DmKhachHang WHERE DmKhachHangID= 'KH05'"
+    },
+    {
+      "id": 100,
+      "question": "Anh (Chị) hãy cho biết cú pháp tạo hàm tạo bảng?",
+      "answer": "create function <tên hàm> ([<danh sách tham số> <kiểu dữ liệu>]) returns table as return(<câu lệnh select>)"
+    },
+    {
+      "id": 101,
+      "question": "Hàm SELECT COUNT(DISTINCT column_name) FROM table_name trả về giá trị gì?",
+      "answer": "Trả về số lượng giá trị khác nhau của cột được chỉ định."
+    },
+    {
+      "id": 102,
+      "question": "Trong một bảng, một cột có thể chứa nhiều giá trị giống nhau, và đôi khi bạn chỉ muốn liệt kê các giá trị khác nhau (khác biệt). ta phải dùng cú pháp gì?",
+      "answer": "SELECT DISTINCT cột truy vấn FROM bảng truy vấn"
+    },
+    {
+      "id": 103,
+      "question": "Anh (Chị) hãy chọn câu trả lời đúng nhất cho các phát biểu sau?",
+      "answer": "ORDER BY sắp xếp thứ tự các hàng kết quả. Bạn có thể chọn sắp xếp các hàng kết quả bằng chỉ thị ASC (sắp theo thứ tự tăng dần) hay DESC (sắp theo thứ tự giảm dần). Giá trị mặc định là ASC."
+    },
+    {
+      "id": 104,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: DiemKhoiA(SoBaoDanh Nvarchar(50), DiemToan Float, DiemLy Float, DiemHoa Float, DiemUuTien Float, TongDiem Float, KetQua Nvarchar(50)) Sử dụng câu lệnh hợp lý để đếm số thí sinh của từng loại tổng điểm cho những thí sinh có kết quả đỗ?",
+      "answer": "SELECT TongDiem, count(*) FROM DiemKhoiA WHERE KetQua = 'đỗ' GROUP BY TongDiem"
+    },
+    {
+      "id": 105,
+      "question": "Ta thường sử dụng từ khoá GROUP BY trong câu lệnh select khi nào?",
+      "answer": "Ta muốn hiển thị dữ liệu theo nhóm."
+    },
+    {
+      "id": 106,
+      "question": "Trong Cú pháp câu lệnh ràng buộc Forein Key, từ khoá No Action có nghĩa là gì?",
+      "answer": "Nếu bản ghi trong bảng tham chiếu đang được tham chiếu bởi một bản ghi bất kỳ trong bảng được định nghĩa thì bản ghi đó không được phép xoá hoặc cập nhật (đối với cột được tham chiếu)."
+    },
+    {
+      "id": 107,
+      "question": "Anh (Chị) hãy nêu cú pháp đầy đủ của câu lệnh ràng buộc Primary Key?",
+      "answer": "[CONSTRAINT tên ràng buộc] PRIMARY KEY [(danh sách cột)]"
+    },
+    {
+      "id": 108,
+      "question": "Anh (Chị) hãy cho biết cú pháp xoá khung nhìn View?",
+      "answer": "drop view <tên khung nhìn>"
+    },
+    {
+      "id": 109,
+      "question": "Anh (Chị) hãy nêu cấu trúc lệnh sửa cấu trúc bảng trong SQL?",
+      "answer": "Alter Table <tên bảng> ( <danh sách các cột cần sửa> <kiểu dữ liệu> [<ràng buộc>]"
+    },
+    {
+      "id": 110,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: HoSoThiSinh(SoBaoDanh Nvarchar(50), HoDem Nvarchar(50), Ten Nvarchar(50), NgaySinh Datetime, KhuVuc Nvarchar(50), DoiTuong Nvarchar(50), KhoiThi Nvarchar(50), DiaChi Nvarchar(400), NguyenVong1 Nvarchar(200), NguyenVong2 Nvarchar(200)) đã được nhập dữ liệu. Hãy thực hiện câu lệnh tính số lượng thí sinh của từng khu vực?",
+      "answer": "SELECT KhuVuc ,count(*) as SoLuongThiSinh FROM HoSoThiSinh GROUP BY KhuVuc"
+    },
+    {
+      "id": 111,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: HoSoThiSinh(SoBaoDanh Nvarchar(50), HoDem Nvarchar(50), Ten Nvarchar(50), NgaySinh Datetime, KhuVuc Nvarchar(50), DoiTuong Nvarchar(50), KhoiThi Nvarchar(50), DiaChi Nvarchar(400), NguyenVong1 Nvarchar(200), NguyenVong2 Nvarchar(200)) đã được nhập dữ liệu. (Biết thí sinh đăng ký thi vào Trường Đại học Kinh doanh và Công nghệ có mã trường là ''DQK'' (là 3 ký tự đầu tiên của số báo danh). Cho biết tổng số thí sinh đăng ký vào trường Đại học Kinh doanh và Công Nghệ Hà nội?",
+      "answer": "SELECT count(*) FROM HoSoThiSinh WHERE left(SoBaoDanh,3)= 'DQK'"
+    },
+    {
+      "id": 112,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: HoSoThiSinh(SoBaoDanh Nvarchar(50), HoDem Nvarchar(50), Ten Nvarchar(50), NgaySinh Datetime, KhuVuc Nvarchar(50), DoiTuong Nvarchar(50), KhoiThi Nvarchar(50), DiaChi Nvarchar(400), NguyenVong1 Nvarchar(200), NguyenVong2 Nvarchar(200)) đã được nhập dữ liệu. Hãy thực hiện câu lệnh cho biết các thông tin: số báo danh, họ và tên, ngày sinh, khu vực của tất cả thí sinh thi khối D?",
+      "answer": "SELECT SoBaoDanh, HoDem, Ten, NgaySinh, KhuVuc FROM HoSoThiSinh WHERE KhoiThi= 'D'"
+    },
+    {
+      "id": 113,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang''có bảng: DmHangHoa(DmHangHoaID Nvarchar(50), TenHang Nvarchar(200), DmNhaSanXuatREF Nvarchar(50), DonViTinh Nvarchar(50)) và bảng: DmNhaSanXuat(DmNhaSanXuatID Nvarchar(50), TenNhaSanXuat Nvarchar(200), DiaChiNhaSanXuat Nvarchar(400),WebsiteNhaSanXuat Nvarchar(200)). Để chọn lọc thông tin: tên hàng, đơn vị tính, tên nhà sản xuất của nhà sản xuất ''ViNaFood''. Ta thực hiện lệnh nào sau đây?",
+      "answer": "SELECT TenHang, DonViTinh , TenNhaSanXuat FROM DmHangHoa INNER JOIN DmNhaSanXuat ON DmHangHoa.DmNhaSanXuatREF = DmNhaSanXuat.DmNhaSanXuatID WHERE TenNhaSanXuat = 'ViNaFood'"
+    },
+    {
+      "id": 114,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang''có bảng: DmHangHoa(DmHangHoaID Nvarchar(50), TenHang Nvarchar(200), DmNhaSanXuatREF Nvarchar(50), DonViTinh Nvarchar(50)) và bảng: DmNhaSanXuat(DmNhaSanXuatID Nvarchar(50), TenNhaSanXuat Nvarchar(200), DiaChiNhaSanXuat Nvarchar(400),WebsiteNhaSanXuat Nvarchar(200)). Để chọn lọc thông tin: tên hàng, đơn vị tính, tên nhà sản xuất của các mặt hàng. Ta thực hiện lệnh nào sau đây?",
+      "answer": "SELECT TenHang, DonViTinh , TenNhaSanXuat FROM DmHangHoa INNER JOIN DmNhaSanXuat ON DmHangHoa.DmNhaSanXuatREF = DmNhaSanXuat.DmNhaSanXuatID"
+    },
+    {
+      "id": 115,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: DiemKhoiA(SoBaoDanh Nvarchar(50), DiemToan Float, DiemLy Float, DiemHoa Float, DiemUuTien Float, TongDiem Float, KetQua Nvarchar(50)). Câu lệnh hiển thị thông tin người có tổng điểm cao nhất là gì?",
+      "answer": "SELECT * FROM DiemKhoiA WHERE TongDiem=max(TongDiem)"
+    },
+    {
+      "id": 116,
+      "question": "Trong CSDL QLDIEM, cho 2 bảng LOP(MALOP, TENLOP), HOCSINH(MASV, HOTEN, MALOP). Bảng HOCSINH liên kết với bảng LOP qua cấu trúc nào?",
+      "answer": "Constraint HOCSINH_LOP foreign key HOCSINH(MALOP) references LOP(MALOP)"
+    },
+    {
+      "id": 117,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: HoSoThiSinh(SoBaoDanh Nvarchar(50), HoDem Nvarchar(50), Ten Nvarchar(50), NgaySinh Datetime, KhuVuc Nvarchar(50), DoiTuong Nvarchar(50), KhoiThi Nvarchar(50), DiaChi Nvarchar(400), NguyenVong1 Nvarchar(200), NguyenVong2 Nvarchar(200)) đã được nhập dữ liệu. Hãy thực hiện câu lệnh hiển thị các thí sinh tên ''Hương'':",
+      "answer": "SELECT * FROM HoSoThiSinh WHERE Ten=N'Hương'"
+    },
+    {
+      "id": 118,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: DiemKhoiA(SoBaoDanh Nvarchar(50), DiemToan Float, DiemLy Float, DiemHoa Float, DiemUuTien Float, TongDiem Float, KetQua Nvarchar(50)). Hãy viết câu lệnh tính số thí sinh có điểm cao hơn hoặc bằng tổng điểm của thí sinh có số báo danh là ''DQKA.2769''?",
+      "answer": "SELECT count(*) FROM DiemKhoiA WHERE TongDiem >= (SELECT TongDiem FROM DiemKhoiA WHERE SoBaoDanh= 'DQKA.2769')"
+    },
+    {
+      "id": 119,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: HoSoThiSinh(SoBaoDanh Nvarchar(50), HoDem Nvarchar(50), Ten Nvarchar(50), NgaySinh Datetime, KhuVuc Nvarchar(50), DoiTuong Nvarchar(50), KhoiThi Nvarchar(50), DiaChi Nvarchar(400), NguyenVong1 Nvarchar(200), NguyenVong2 Nvarchar(200)) đã được nhập dữ liệu. Hãy viết câu lệnh tính số lượng thí sinh thi khối D?",
+      "answer": "SELECT count(*) FROM HoSoThiSinh WHERE KhoiThi= 'D'"
+    },
+    {
+      "id": 120,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: HoSoThiSinh(SoBaoDanh Nvarchar(50), HoDem Nvarchar(50), Ten Nvarchar(50), NgaySinh Datetime, KhuVuc Nvarchar(50), DoiTuong Nvarchar(50), KhoiThi Nvarchar(50), DiaChi Nvarchar(400), NguyenVong1 Nvarchar(200), NguyenVong2 Nvarchar(200)) đã được nhập dữ liệu. Hãy thực hiện câu lệnh tính tuổi cho từng thí sinh?",
+      "answer": "SELECT SoBaoDanh, (year(getdate())-year(NgaySinh)) as Tuoi FROM HoSoThiSinh"
+    },
+    {
+      "id": 121,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: HoSoThiSinh(SoBaoDanh Nvarchar(50), HoDem Nvarchar(50), Ten Nvarchar(50), NgaySinh Datetime, KhuVuc Nvarchar(50), DoiTuong Nvarchar(50), KhoiThi Nvarchar(50), DiaChi Nvarchar(400), NguyenVong1 Nvarchar(200), NguyenVong2 Nvarchar(200)) đã được nhập dữ liệu. Muốn biết thông tin thí sinh có địa chỉ ở các tỉnh: Nghệ An, Hà Tĩnh, Quảng Bình. Ta thực hiện lệnh?",
+      "answer": "SELECT * FROM HoSoThiSinh WHERE right(DiaChi,7)= N'Nghệ An' or right(DiaChi,7)= N'Hà Tĩnh' or right(DiaChi,10)= N'Quảng Bình'"
+    },
+    {
+      "id": 122,
+      "question": "Cho biết chương trình sau thực hiện việc gì? CREATE PROCEDURE ThongTinNhaCungCap @TenNhaCungCap Nvarchar(200) AS BEGIN SELECT * FROM DmNhaCungCap WHERE TenNhaCungCap = @TenNhaCungCap END",
+      "answer": "Tạo STORE PROCEDURE hiển thị thông tin của nhà cung cấp có tên nhà cung cấp được truyền từ tham số."
+    },
+    {
+      "id": 123,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: HoSoThiSinh(SoBaoDanh Nvarchar(50), HoDem Nvarchar(50), Ten Nvarchar(50), NgaySinh Datetime, KhuVuc Nvarchar(50), DoiTuong Nvarchar(50), KhoiThi Nvarchar(50), DiaChi Nvarchar(400), NguyenVong1 Nvarchar(200), NguyenVong2 Nvarchar(200)) đã được nhập dữ liệu. Hãy thực hiện câu lệnh đếm số lượng thí sinh ở khu vực = ''3''?",
+      "answer": "SELECT KhuVuc ,count(*) as SoLuongThiSinh FROM HoSoThiSinh WHERE KhuVuc= '3'"
+    },
+    {
+      "id": 124,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang'' có bảng: HoaDonBanHang( HoaDonBanHangID Nvarchar(50), NgayLapHoaDon Datetime, DmNhanVienREF Nvarchar(50), DmKhachHangREF Nvarchar(50), TongTienBan Bigint) Hãy viết lệnh giảm tổng tiền trả 10% cho những hoá đơn xuất ngày 30/4/2011 và ngày 1/5/2011?",
+      "answer": "UPDATE HoaDonBanHang SET TongTienBan = TongTienBan*0.9 WHERE NgayLapHoaDon ='4/30/2011' OR NgayLapHoaDon ='5/1/2011'"
+    },
+    {
+      "id": 125,
+      "question": "Cơ sở dữ liệu ''QuanLyBanHang''có bảng: DmKhachHang(DmKhachHangID Nvarchar(50), HoTenKhachHang Nvarchar(50), DiaChiKhachHang Nvarchar(200), DienThoaiKhachHang Nvarchar(50), EmailKhachHang Nvarchar(50), MaSoThueKhachHang Nvarchar(50),TaiKhoanKhachHang Nvarchar(50)) Hãy chọn câu lệnh đúng để nhập thêm một khách hàng mới?",
+      "answer": "INSERT INTO DmKhachHang (DmKhachHangID, HoTenKhachHang, DiaChiKhachHang, DienThoaiKhachHang, EmailKhachHang, MaSoThueKhachHang, TaiKhoanKhachHang) VALUES('kh14', N'Trần Mai Hạnh', N'48 -Láng Hạ - Hà Nội', '0904768234', 'TriThuc@gmail.com', '02345871090', '129872421118790')"
+    },
+    {
+      "id": 126,
+      "question": "Cơ sở dữ liệu ''QuanLyBanHang''bao gồm các bảng (Giả sử các cột trong bảng đều có kiểu dữ liệu Nvarchar(50)): DmKhachHang(DmKhachHangID, HoTenKhachHang, DiaChiKhachHang, DienThoaiKhachHang, EmailKhachHang, MaSoThueKhachHang,TaiKhoanKhachHang). Hãy viết câu lệnh đúng để sửa tên khách hàng có mã khách hàng \"KH05\" là ''Trần Minh Hằng'' thành ''Trần Minh Hạnh''?",
+      "answer": "UPDATE DmKhachHang SET HoTenKhachHang=N 'Trần Minh Hạnh' WHERE DmKhachHangID = 'KH05'"
+    },
+    {
+      "id": 127,
+      "question": "Cho cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng sau: HoSoThiSinh(SoBaoDanh Nvarchar(50), HoDem Nvarchar(50), Ten Nvarchar(50), NgaySinh Datetime, KhuVuc Nvarchar(50), DoiTuong Nvarchar(50), KhoiThi Nvarchar(50), DiaChi Nvarchar(400), NguyenVong1 Nvarchar(200), NguyenVong2 Nvarchar(200)) đã được nhập dữ liệu. Hãy thực hiện câu lệnh sửa tên của thí sinh có số báo danh ''DQKD.2789'' là ''Hằng'' thành ''Hạnh''?",
+      "answer": "UPDATE HoSoThiSinh SET Ten=N'Hạnh' WHERE SoBaoDanh= 'DQKD.2789'"
+    },
+    {
+      "id": 128,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: DiemKhoiA(SoBaoDanh Nvarchar(50), DiemToan Float, DiemLy Float, DiemHoa Float, DiemUuTien Float, TongDiem Float, KetQua Nvarchar(50)) Với thí sinh có tổng điểm từ 13 điểm trở lên thì ghi kết quả ''đỗ'', ngược lại ghi kết quả là ''trượt''). Anh (Chị) hãy cho biết câu lệnh cập nhật thông tin cho cột kết quả (cột KetQua) của từng thí sinh?",
+      "answer": "UPDATE DiemKhoiA SET KetQua = CASE WHEN TongDiem>=13 THEN N'đỗ' ELSE N'trượt' END"
+    },
+    {
+      "id": 129,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang''có bảng: DmHangHoa(DmHangHoaID Nvarchar(50), TenHang Nvarchar(200), DmNhaSanXuatREF Nvarchar(50), DonViTinh Nvarchar(50)) Hãy cho biết tổng số lượng các mặt hàng?",
+      "answer": "SELECT count(*) as SoLuongMatHang FROM DmHangHoa"
+    },
+    {
+      "id": 130,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: DiemKhoiA(SoBaoDanh Nvarchar(50), DiemToan Float, DiemLy Float, DiemHoa Float, DiemUuTien Float, TongDiem Float, KetQua Nvarchar(50)) Hãy cho biết câu lệnh hiển thị thông tin của các thí sinh có ít nhất một trong 3 môn thi bị điểm liệt (điểm liệt = 0)?",
+      "answer": "SELECT * FROM DiemKhoiA WHERE DiemToan=0 or DiemLy=0 or DiemHoa=0"
+    },
+    {
+      "id": 131,
+      "question": "Cơ sở dữ liệu ''QuanLyTuyenSinh''có bảng: DiemKhoiA(SoBaoDanh Nvarchar(50), DiemToan Float, DiemLy Float, DiemHoa Float, DiemUuTien Float, TongDiem Float, KetQua Nvarchar) Hãy cho biết câu lệnh sắp xếp danh sách thí sinh theo tổng điểm từ cao xuống thấp?",
+      "answer": "SELECT * FROM DiemKhoiA ORDER BY TongDiem Desc"
+    },
+    {
+      "id": 132,
+      "question": "Hãy cho biết câu lệnh chọn lọc tất cả nhân viên có ngày sinh trong tháng 5?",
+      "answer": "SELECT NV.HOTEN FROM NHANVIEN AS NV WHERE MONTH(NV.NGAYSINH) = 5"
+    },
+    {
+      "id": 133,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang''có bảng: DmHangHoa(DmHangHoaID Nvarchar(50), TenHang Nvarchar(200), DmNhaSanXuatREF Nvarchar(50), DonViTinh Nvarchar(50)) và bảng: DmNhaSanXuat(DmNhaSanXuatID Nvarchar(50), TenNhaSanXuat Nvarchar(200), DiaChiNhaSanXuat Nvarchar(400),WebsiteNhaSanXuat Nvarchar(200)) Để biết thông tin các nhà sản xuất tại Việt Nam. Ta thực hiện lệnh nào sau đây?",
+      "answer": "SELECT * FROM DmNhaSanXuat WHERE DiaChiNhaSanXuat LIKE N'%Việt Nam'"
+    },
+    {
+      "id": 134,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang''có bảng: HoaDonBanHang( HoaDonBanHangID Nvarchar(50), NgayLapHoaDon Datetime, DmNhanVienREF Nvarchar(50), DmKhachHangREF Nvarchar(50), TongTienBan Bigint) và bảng: DmNhanVien (DmNhanVienID Nvarchar(50), HoTenNhanVien Nvarchar(200), ChucVuNhanVien Nvarchar(50)). Hãy cho biết số lượng hoá đơn của từng nhân viên xuất trong năm 2011?",
+      "answer": "SELECT HoTenNhanVien, COUNT(HoaDonBanHangID) AS SoLuongHoaDon FROM HoaDonBanHang INNER JOIN DmNhanVien ON HoaDonBanHang. DmNhanVienREF = DmNhanVien. DmNhanVienID WHERE YEAR(NgayLapHoaDon ) = 2011 GROUP BY HoTenNhanVien"
+    },
+    {
+      "id": 135,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang''có bảng: HoaDonBanHang( HoaDonBanHangID Nvarchar(50), NgayLapHoaDon Datetime, DmNhanVienREF Nvarchar(50), DmKhachHangREF Nvarchar(50), TongTienBan Bigint) và bảng: HoaDonBanHangChiTiet( HoaDonBanHangChiTietID Nvarchar(50), HoaDonBanHangFK Nvarchar(50), DmTenKhachHangREF Nvarchar(50), DmHangHoaREF Nvarchar(50), SoLuongBan Int, DonGiaBan Bigint, ThanhTienBan Bigint). Muốn biết thông tin: mã hoá đơn, ngày lập hoá đơn, mã hàng, đơn giá, số lượng của tất cả các mặt hàng được bán trong ngày 24/3/2011 ta sử dụng lệnh nào sau đây?",
+      "answer": "SELECT HoaDonBanHangID, NgayLapHoaDon, DmHangHoaREF, DonGiaBan, SoLuongBan FROM HoaDonBanHang INNER JOIN HoaDonBanHangChiTiet ON HoaDonBanHang. HoaDonBanHangID = HoaDonBanHangChiTiet. HoaDonBanHangFK WHERE NgayLapHoaDon = '03/24/2011'"
+    },
+    {
+      "id": 136,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang'' có bảng: HoaDonBanHang( HoaDonBanHangID Nvarchar(50), NgayLapHoaDon Datetime, DmNhanVienREF Nvarchar(50), DmKhachHangREF Nvarchar(50), TongTienBan Bigint) và bảng: DmKhachHang (DmKhachHangID Nvarchar(50), HoTenKhachHang Nvarchar(200), DiaChiKhachHang Nvarchar(400), DienThoaiKhachHang Nvarchar(50), EmailKhachHang Nvarchar(200), MaSoThueKhachHang Nvarchar(50),TaiKhoanKhachHang Nvarchar(200)) Viết lệnh cho biết thông tin những hoá đơn của khách hàng \"Phạm Thu Vân\" mua trong năm 2011?",
+      "answer": "SELECT HoaDonBanHangID, NgayLapHoaDon , DmNhanVienREF, DmKhachHangREF, TongTienBan FROM HoaDonBanHang INNER JOIN DmKhachHang ON HoaDonBanHang. DmKhachHangREF = DmKhachHang. DmKhachHangID WHERE HoTenKhachHang = N'Phạm Thu Vân' AND YEAR(NgayLapHoaDon)=2011"
+    },
+    {
+      "id": 137,
+      "question": "Hãy cho biết đoạn mã sau thực hiện công việc gì? CREATE PROCEDURE HoaDonTheoNam @nam int AS BEGIN SELECT HoaDonBanHangID, HoTenKhachHang, NgayLapHoaDon, TongTienBan FROM HoaDonBanHang INNER JOIN DmKhachHang ON HoaDonBanHang.DmKhachHangREF = DmKhachHang.DmKhachHangID WHERE HoTenKhachHang = N'Phạm Thu Vân' AND YEAR(NgayLapHoaDon) = @nam END",
+      "answer": "Tạo STORE PROCEDURE cho biết thông tin những hoá đơn (mã hoá đơn, họ tên khách hàng, ngày lập hoá đơn, tổng tiền) của khách hàng ''Phạm Thu Vân'' mua trong năm (mà giá trị của năm được truyền vào từ tham số)"
+    },
+    {
+      "id": 138,
+      "question": "Anh (Chị) hãy chi biết đoạn lệnh sau thực hiện việc gì? CREATE PROCEDURE HoaDonTheoNam @HoTenKhachHang Nvarchar(200) , @nam int AS BEGIN SELECT HoaDonBanHangID, HoTenKhachHang, NgayLapHoaDon, TongTienBan FROM HoaDonBanHang INNER JOIN DmKhachHang ON HoaDonBanHang.DmKhachHangREF = DmKhachHang.DmKhachHangID WHERE HoTenKhachHang = @HoTenKhachHang AND YEAR(NgayLapHoaDon)= @nam END",
+      "answer": "Tạo STORE PROCEDURE hiển thị thị thông tin (mã hoá đơn, họ tên khách hàng, ngày lập hoá đơn, tổng tiền bán) từ hai bảng ''HoaDonBanHang'' và ''DmKhachHang'' trong năm được truyền vào từ tham số và của khách hàng có họ tên được truyền vào từ tham số."
+    },
+    {
+      "id": 139,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang''có bảng: DmHangHoa(DmHangHoaID Nvarchar(50), TenHang Nvarchar(200), DmNhaSanXuatREF Nvarchar(50), DonViTinh Nvarchar(50)) và bảng: DmNhaSanXuat(DmNhaSanXuatID Nvarchar(50), TenNhaSanXuat Nvarchar(200), DiaChiNhaSanXuat Nvarchar(400),WebsiteNhaSanXuat Nvarchar(200)) Hãy cho biết số lượng mặt hàng cung ứng của từng nhà sản xuất?",
+      "answer": "SELECT TenNhaSanXuat , Count(TenNhaSanXuat) as soluonghang FROM DmHangHoa INNER JOIN DmNhaSanXuat ON DmHangHoa.DmNhaSanXuatREF = DmNhaSanXuat.DmNhaSanXuatID GROUP BY TenNhaSanXuat"
+    },
+    {
+      "id": 140,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang''có bảng: HoaDonBanHang( HoaDonBanHangID Nvarchar(50), NgayLapHoaDon Datetime, DmNhanVienREF Nvarchar(50), DmKhachHangREF Nvarchar(50), TongTienBan Bigint) Hãy viết lệnh tính tổng số tiền bán được trong từng ngày trong tháng 2 năm 2011?",
+      "answer": "SELECT SUM(TongTienBan) AS TongTienBanTheoNgay FROM HoaDonBanHang WHERE MONTH(NgayLapHoaDon)=2 AND YEAR(NgayLapHoaDon)=2011 GROUP BY NgayLapHoaDon"
+    },
+    {
+      "id": 141,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang'' có bảng: DmNhaCungCap (DmNhaCungCapID Nvarchar(50), TenNhaCungCap Nvarchar(200), DiaChiNhaCungCap Nvarchar(200), DienThoaiNhaCungCap Nvarchar(50), FaxNhaCungCap Nvarchar(50), EmailNhaCungCap Nvarchar(50), WebsiteNhaCungCap Nvarchar(200) , MaSoThueNhaCungCap Nvarchar(50), TaiKhoanNhaCungCap Nvarchar(50)) Hãy tạo STORE PROCEDURE tính số lượng nhà cung cấp?",
+      "answer": "CREATE PROCEDURE SoLuongNhaCungCap AS BEGIN SELECT COUNT(*) AS SoLuongNCC FROM DmNhaCungCap END"
+    },
+    {
+      "id": 142,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang'' có bảng: DmNhaCungCap (DmNhaCungCapID Nvarchar(50), TenNhaCungCap Nvarchar(200), DiaChiNhaCungCap Nvarchar(200), DienThoaiNhaCungCap Nvarchar(50), FaxNhaCungCap Nvarchar(50), EmailNhaCungCap Nvarchar(50), WebsiteNhaCungCap Nvarchar(200) , MaSoThueNhaCungCap Nvarchar(50), TaiKhoanNhaCungCap Nvarchar(50)) Giả sử ta có Store Procedure nhập thêm nhà cung cấp là: ''dbo.DmNhaCungCap_Insert''. Câu lệnh chạy Store Procedure nào sau đây hợp lệ:",
+      "answer": "EXEC dbo.DmNhaCungCap_Insert ('NCC24', N'Trần Minh', N'26 - Láng Hạ - Hà Nội','043 3490234', '043 3490235', 'TranMinh@gmail.com', 'TranMinh.vnn.vn','3457682345','3426788999654')"
+    },
+    {
+      "id": 143,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang'' có bảng: DmNhaCungCap (DmNhaCungCapID Nvarchar(50), TenNhaCungCap Nvarchar(200), DiaChiNhaCungCap Nvarchar(200), DienThoaiNhaCungCap Nvarchar(50), FaxNhaCungCap Nvarchar(50), EmailNhaCungCap Nvarchar(50), WebsiteNhaCungCap Nvarchar(200) , MaSoThueNhaCungCap Nvarchar(50), TaiKhoanNhaCungCap Nvarchar(50)) Hãy viết Store Procedure nhập thêm một nhà cung cấp mới vào danh sách?",
+      "answer": "CREATE PROCEDURE DmNhaCungCap_Insert @DmNhaCungCapID Nvarchar(50), @TenNhaCungCap Nvarchar(200), @DiaChiNhaCungCap Nvarchar(200), @DienThoaiNhaCungCap Nvarchar(50), @FaxNhaCungCap Nvarchar(50), @EmailNhaCungCap Nvarchar(50), @WebsiteNhaCungCap Nvarchar(200) , @MaSoThueNhaCungCap Nvarchar(50), @TaiKhoanNhaCungCap Nvarchar(50) AS BEGIN INSERT INTO DmNhaCungCap (DmNhaCungCapID , TenNhaCungCap , DiaChiNhaCungCap , DienThoaiNhaCungCap , FaxNhaCungCap , EmailNhaCungCap , WebsiteNhaCungCap , MaSoThueNhaCungCap , TaiKhoanNhaCungCap) VALUES( @DmNhaCungCapID, @TenNhaCungCap, @DiaChiNhaCungCap , @DienThoaiNhaCungCap , @FaxNhaCungCap, @EmailNhaCungCap, @WebsiteNhaCungCap, @MaSoThueNhaCungCap, @TaiKhoanNhaCungCap) END"
+    },
+    {
+      "id": 144,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang''bao gồm các bảng: HoaDonBanHang( HoaDonBanHangID Nvarchar(50), NgayLapHoaDon Datetime, DmNhanVienREF Nvarchar(50), DmKhachHangREF Nvarchar(50), TongTienBan Bigint) và bảng: DmKhachHang (DmKhachHangID Nvarchar(50), HoTenKhachHang Nvarchar(200), DiaChiKhachHang Nvarchar(400), DienThoaiKhachHang Nvarchar(50), EmailKhachHang Nvarchar(200), MaSoThueKhachHang Nvarchar(50),TaiKhoanKhachHang Nvarchar(200)) Hãy tạo Store Procedure cho biết thông tin những hoá đơn (mã hoá đơn, họ tên khách hàng, ngày lập hoá đơn, tổng tiền) của khách hàng (mà họ tên khách hàng được truyền qua tham số) mua trong năm (mà giá trị của năm được truyền vào từ tham số)?",
+      "answer": "CREATE PROCEDURE HoaDonTheoNam @HoTenKhachHang Nvarchar(200) , @nam int AS BEGIN SELECT HoaDonBanHangID, HoTenKhachHang, NgayLapHoaDon, TongTienBan FROM HoaDonBanHang INNER JOIN DmKhachHang ON HoaDonBanHang.DmKhachHangREF = DmKhachHang.DmKhachHangID WHERE HoTenKhachHang = @HoTenKhachHang AND YEAR(NgayLapHoaDon)= @nam END"
+    },
+    {
+      "id": 145,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang'' có bảng: HoaDonBanHang( HoaDonBanHangID Nvarchar(50), NgayLapHoaDon Datetime, DmNhanVienREF Nvarchar(50), DmKhachHangREF Nvarchar(50), TongTienBan Bigint) và bảng: DmKhachHang (DmKhachHangID Nvarchar(50), HoTenKhachHang Nvarchar(200), DiaChiKhachHang Nvarchar(400), DienThoaiKhachHang Nvarchar(50), EmailKhachHang Nvarchar(200), MaSoThueKhachHang Nvarchar(50),TaiKhoanKhachHang Nvarchar(200)) Anh (Chị) hãy viết Store procedure cho biết thông tin những hoá đơn (mã hoá đơn, họ tên khách hàng, ngày lập hoá đơn, tổng tiền) của khách hàng \"Phạm Thu Vân\" mua trong năm (mà giá trị của năm được truyền vào từ tham số)?",
+      "answer": "CREATE PROCEDURE HoaDonTheoNam @nam int AS BEGIN SELECT HoaDonBanHangID, HoTenKhachHang, NgayLapHoaDon, TongTienBan FROM HoaDonBanHang INNER JOIN DmKhachHang ON HoaDonBanHang.DmKhachHangREF = DmKhachHang.DmKhachHangID WHERE HoTenKhachHang = N'Phạm Thu Vân' AND YEAR(NgayLapHoaDon)=@nam END"
+    },
+    {
+      "id": 146,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang''có bảng: HoaDonBanHang( HoaDonBanHangID Nvarchar(50), NgayLapHoaDon Datetime, DmNhanVienREF Nvarchar(50), DmKhachHangREF Nvarchar(50), TongTienBan Bigint) và bảng: HoaDonBanHangChiTiet( HoaDonBanHangChiTietID Nvarchar(50), HoaDonBanHangFK Nvarchar(50), DmTenKhachHangREF Nvarchar(50), DmHangHoaREF Nvarchar(50), SoLuongBan Int, DonGiaBan Bigint, ThanhTienBan Bigint) Muốn biết thông tin: mã hoá đơn, ngày lập hoá đơn, mã hàng, đơn giá, số lượng của tất cả các mặt hàng được bán trong năm 2010, ta sử dụng lệnh nào sau đây?",
+      "answer": "SELECT HoaDonBanHangID, NgayLapHoaDon, DmHangHoaREF, DonGiaBan, SoLuongBan FROM HoaDonBanHang INNER JOIN HoaDonBanHangChiTiet ON HoaDonBanHang. HoaDonBanHangID = HoaDonBanHangChiTiet. HoaDonBanHangFK WHERE YEAR(NgayLapHoaDon) = 2010"
+    },
+    {
+      "id": 147,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang'' có bảng: HoaDonBanHang( HoaDonBanHangID Nvarchar(50), NgayLapHoaDon Datetime, DmNhanVienREF Nvarchar(50), DmKhachHangREF Nvarchar(50), TongTienBan Bigint) Hãy viết lệnh giảm tổng tiền trả 10% cho những hoá đơn xuất ngày 2/9/2011, còn các ngày khác trong tháng 9 năm 2011 thì giảm tổng tiền phải trả 5% so với tổng tiền ban đầu?",
+      "answer": "UPDATE dbo.Table_HoaDonBanHang SET TongTienBan= CASE WHEN NgayLapHoaDon ='9/2/2011' THEN TongTien*0.9 ELSE TongTienBan *0.95 END WHERE MONTH(NgayLapHoaDon)=9 AND YEAR(NgayLapHoaDon)=2011"
+    },
+    {
+      "id": 148,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang'' có bảng: DmNhaCungCap (DmNhaCungCapID Nvarchar(50), TenNhaCungCap Nvarchar(200), DiaChiNhaCungCap Nvarchar(200), DienThoaiNhaCungCap Nvarchar(50), FaxNhaCungCap Nvarchar(50), EmailNhaCungCap Nvarchar(50), WebsiteNhaCungCap Nvarchar(200) , MaSoThueNhaCungCap Nvarchar(50), TaiKhoanNhaCungCap Nvarchar(50)) Hãy viết câu lệnh SQL nhập thêm một nhà cung cấp mới vào danh sách?",
+      "answer": "INSERT INTO DmNhaCungCap(DmNhaCungCapID , TenNhaCungCap , DiaChiNhaCungCap , DienThoaiNhaCungCap , FaxNhaCungCap , EmailNhaCungCap , WebsiteNhaCungCap , MaSoThueNhaCungCap , TaiKhoanNhaCungCap) VALUES('NCC24',N'Trần Minh', N'26 - Láng Hạ - Hà Nội','043 3490234', '043 3490235', 'TranMinh@gmail.com', 'TranMinh.vnn.vn','3457682345','3426788999654')"
+    },
+    {
+      "id": 149,
+      "question": "Cơ sở dữ liệu ''QuanLyCuaHang'' có bảng: HoaDonBanHang( HoaDonBanHangID Nvarchar(50), NgayLapHoaDon Datetime, DmNhanVienREF Nvarchar(50), DmKhachHangREF Nvarchar(50), TongTienBan Bigint) và bảng: DmKhachHang (DmKhachHangID Nvarchar(50), HoTenKhachHang Nvarchar(200), DiaChiKhachHang Nvarchar(400), DienThoaiKhachHang Nvarchar(50), EmailKhachHang Nvarchar(200), MaSoThueKhachHang Nvarchar(50),TaiKhoanKhachHang Nvarchar(200)) Hãy tạo Store Procedure cho biết thông tin những hoá đơn (mã hoá đơn, họ tên khách hàng, ngày lập hoá đơn, tổng tiền) của khách hàng mua trong năm (mà giá trị của năm được truyền vào từ tham số)?",
+      "answer": "CREATE PROCEDURE HoaDonTheoNam @nam int AS BEGIN SELECT HoaDonBanHangID, HoTenKhachHang, NgayLapHoaDon, TongTienBan FROM HoaDonBanHang INNER JOIN DmKhachHang ON HoaDonBanHang.DmKhachHangREF = DmKhachHang.DmKhachHangID WHERE YEAR(NgayLapHoaDon)=@nam END"
+    }
+  ]
+}
